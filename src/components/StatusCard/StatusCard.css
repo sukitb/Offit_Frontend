@@ -1,0 +1,49 @@
+.card {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns:30% 65%;
+    border: px solid tomato;
+    align-items: center;
+    box-shadow: 4px 4px 5px #888;
+    border-radius: 15px;
+    margin: 20px;
+    background-color: white;
+   
+   
+}
+
+.card .border img {
+    width: 100%;  
+    border-radius: 15%;
+    box-shadow: 4px 4px 5px #888;
+}
+
+.card .card-body {
+    justify-content:space-between;
+    font-size: 95%;
+
+}
+
+.card .card-body .title {
+    color: green;
+    
+    
+}
+/* .card .card-body .text {
+    font-size: 180%;
+    line-height: 120%;
+    
+} */
+
+.card .card-body .date {
+    color: gray;
+    margin-bottom: 0px;
+}
+
+@media screen and (max-width: 600px) {
+.card {
+      
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
