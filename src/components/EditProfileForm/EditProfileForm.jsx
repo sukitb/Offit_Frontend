@@ -61,7 +61,7 @@ function EditProfileForm() {
             placeholder="your height"
             type="number"
           />
-          <button>Submit</button>
+          <button>EDIT</button>
         </div>
       </form>
     </div>
