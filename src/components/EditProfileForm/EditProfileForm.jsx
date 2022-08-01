@@ -21,7 +21,7 @@ function EditProfileForm() {
   }
   // image
   
-  const [img, setImg] = useState()
+  const [img, setImg] = useState('../src/assets/run.jpg')
   function onImageChange(event) {
     const [file] = event.target.files;
     setImg(URL.createObjectURL(file));
@@ -30,13 +30,17 @@ function EditProfileForm() {
 
   return (
     <div className="box-form">
-      <h1>
-        Hello {editProfile.uName}</h1> <p>your BMI is  {editProfile.weight}</p>
-      
+      <div>
+        <h1 className="heading-form">
+          Hello {editProfile.uName}
+        </h1>
+          <p>your BMI is  {editProfile.weight}
+        </p>
+      </div>
    
       <form>
         <div>
-          <img className="img-profile" src={img} alt="" />
+          <img className="img-form" src={img} alt="" />
           <input type="file" onChange={onImageChange} />
         </div>
         <div>
@@ -61,6 +65,7 @@ function EditProfileForm() {
             placeholder="your height"
             type="number"
           />
+
           <button>EDIT</button>
         </div>
       </form>

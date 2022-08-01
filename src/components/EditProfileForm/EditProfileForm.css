@@ -1,8 +1,10 @@
-.img-profile {
+.img-form {
     width: 250px;
     border: #50a3a2 3px solid;
- 
  }
+.heading-form {
+    margin-bottom: -10px;
+}
  
 form input {
      border: 2px solid #50a3a2;
@@ -34,7 +36,7 @@ form button {
 .box-form {
      border: #50a3a2 3px solid;
      font-family: "Source Sans Pro", sans-serif;
-     padding: 0px 35px 35px 35px ;
+     padding: 0px 55px 35px 55px ;
      margin-block: 24px 10px;
      border-radius: 15px;
    
