@@ -1,0 +1,14 @@
+.Datebar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: solid 1px;
+}
+
+.Datebar button {
+    background-color: transparent;
+}
+
+.Datebar span {
+    font-size: 1.25em;
+}
