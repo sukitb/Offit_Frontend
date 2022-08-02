@@ -12,16 +12,10 @@
      overflow: hidden;
 }
 
-.activity-card img {
-    height: 100%;
-    border-radius: 10px;
-}
 
-.activity-card video {
-    
-    border-radius: 10px;
-    border-radius: 15px;
-    border: solid 2px red;
+.activity-card-in {
+    width: 100%;
+    border-radius: 10%;
 }
 
 .activity-card p {

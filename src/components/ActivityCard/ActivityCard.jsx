@@ -1,17 +1,21 @@
 import React from 'react'
-import YouTube from 'react-youtube';
 import './ActivityCard.css'
 
 function ActivityCard(props) {
 
-  const opts = {
-    heigth: '150',
-    width: '225',}
-
+   
   return (
     <div className='activity-card'>
-        {props.video ? <YouTube opts={opts} videoId={props.video} /> : <img src={props.img} />}
-        
+        <img src={props.img} /> 
+        <iframe src={props.video} 
+        title="title-test" 
+        frameBorder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+
+   
+
+        {/* <img src='./src/assets/imageCard.png' /> 
+        <video src='' /> */}
         <div className=''>
             <p className='float-left'>{props.activity}</p>
             <p className='float-right'>{props.durationTime}</p>  
