@@ -38,7 +38,7 @@ function EditProfileForm() {
         </p>
       </div>
    
-      <form>
+      <div className="form">
         <div>
           <img className="img-form" src={img} alt="" />
           <input type="file" onChange={onImageChange} />
@@ -68,7 +68,7 @@ function EditProfileForm() {
 
           <button>EDIT</button>
         </div>
-      </form>
+      </div>
     </div>
   );
 }
