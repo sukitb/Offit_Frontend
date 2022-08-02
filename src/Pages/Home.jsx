@@ -4,6 +4,7 @@ import './Home.css'
 import ProfileImgMock from "../assets/1528342403-8548fc2c1a5c1fd30ac85385d2c21767.jpg"
 import Calendar from "react-calendar";
 import Datebar from "../components/Datebar/Datebar";
+import Navbar from "../components/Navbar/Navbar";
 
 export function Home() {
 
@@ -15,7 +16,7 @@ export function Home() {
   
     return (
     <div className="Home">
-      {/* <Navbar /> */}
+      <Navbar />
       <Datebar />
       <Profile 
       imgSrc={ProfileImgMock} 
