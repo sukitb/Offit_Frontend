@@ -3,7 +3,7 @@ import { useState } from "react";
 import './Home.css'
 import ProfileImgMock from "../assets/1528342403-8548fc2c1a5c1fd30ac85385d2c21767.jpg"
 import Calendar from "react-calendar";
-import { Datebar } from "../components/Datebar/Datebar";
+import Datebar from "../components/Datebar/Datebar";
 
 export function Home() {
 
