@@ -2,6 +2,8 @@ import React from 'react'
 import './ActivityCard.css'
 
 function ActivityCard(props) {
+
+   
   return (
     <div className='activity-card'>
         <img src={props.img} /> 
@@ -9,7 +11,9 @@ function ActivityCard(props) {
         title="title-test" 
         frameBorder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-    
+
+   
+
         {/* <img src='./src/assets/imageCard.png' /> 
         <video src='' /> */}
         <div className=''>

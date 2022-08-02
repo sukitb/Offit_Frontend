@@ -2,7 +2,7 @@ const activityInfo = [
     {
         id: 1,
         img: "../src/assets/imageCard.png",
-        video: "https://www.youtube.com/watch?v=0J7D21OEbC4",
+        video: "https://www.youtube.com/embed/oKfNUOWuZV8",
         activity: "yoca",
         durationTime: "3hr 5s",
        
@@ -10,7 +10,7 @@ const activityInfo = [
     {
         id: 2,
         img: "../src/assets/yoca.jpg",
-        video: "https://youtu.be/0J7D21OEbC4",
+        video: "https://www.youtube.com/embed/g_tea8ZNk5A",
         activity: "yoca2",
         durationTime: "1hr 5s",
      

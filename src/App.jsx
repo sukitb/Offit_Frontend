@@ -4,7 +4,7 @@ import './App.css'
 import ActivityCard from './components/ActivityCard/ActivityCard'
 import ActivityCardList from './components/ActivityCardList/ActivityCardList'
 import EditProfileForm from './components/EditProfileForm/EditProfileForm'
-import ExcecisePostForm from './components/ExcercisePostForm/ExcecisePostForm'
+import ExcecisePostForm from './components/test/ExcercisePostForm/ExcecisePostForm'
 
 import StatusList from './components/StatusList/StatusList'
 import Header from './components/test/Header'
@@ -24,9 +24,11 @@ function App() {
   return (
     <div>
      
-      {/* <EditProfileForm /> */}
+      <EditProfileForm />
 
       <ActivityCardList />
+
+      {/* <EditProfileForm />  */}
 
      
     
