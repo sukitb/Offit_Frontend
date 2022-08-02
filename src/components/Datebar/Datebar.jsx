@@ -1,15 +1,15 @@
 import React from "react";
-import CalendarIcon from "../../assets/Calendar-Icon.svg"
-import './Datebar.css'
+import "./Datebar.css";
+import CarlendarIcon from "../../assets/Vector (1).svg";
+import DateNow from "./DateNow";
 
-// ! jquery can make a calendar
-
-export function Datebar() {
-
-    return(
-        <div className="Datebar">
-            <button><img src={CalendarIcon} /></button>
-            <span>Wed, 10 august 2022</span>
-        </div>
-    )
+function Datebar() {
+  return (
+    <div className="DateBar">
+      <img className="CarlendarIcon" src={CarlendarIcon} />
+      <DateNow />
+    </div>
+  );
 }
+
+export default Datebar;

@@ -1,14 +1,35 @@
-.Datebar {
+@import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.DateBar {
+    width: 100%;
+    height: 6vh;
+    min-height: 35px;
     display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-self: center;
+  }
+  
+  .CarlendarIcon {
+    width: auto;
+    height: 4vh;
+    margin: 1vh 20px 1vh 0;
+    display: flex;
+    min-height: 30px;
+  }
+
+  .DateNow{
+    display: flex;
+    flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    border: solid 1px;
-}
-
-.Datebar button {
-    background-color: transparent;
-}
-
-.Datebar span {
-    font-size: 1.25em;
-}
+    width: 22.39vw;
+    height: 6.969vh;
+    font-family: 'Prompt';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1.2rem;
+    letter-spacing: 0.02em;
+    padding-left: 0.5vw;
+    color: #438BBF;
+  }
