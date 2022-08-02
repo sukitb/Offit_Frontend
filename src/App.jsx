@@ -5,7 +5,6 @@ import "./App.css";
 // pages
 import { Home } from "./Pages/Home";
 import './App.css'
-import Datebar from './components/Datebar/Datebar'
 
 // todo add AddActivity
 // todo add EditProfile
