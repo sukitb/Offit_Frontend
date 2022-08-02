@@ -9,6 +9,13 @@ import './App.css'
 // todo add AddActivity
 // todo add EditProfile
 
+import ActivityCardList from './components/ActivityCardList/ActivityCardList'
+import EditProfileForm from './components/EditProfileForm/EditProfileForm'
+
+
+
+
+
 function App() {
   return (
     <div className="App">
