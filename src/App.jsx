@@ -27,8 +27,6 @@ function App() {
       {/* <EditProfileForm /> */}
 
       <ActivityCardList />
-
-     
     
       {/* <ExcecisePostForm  /> */}
 
