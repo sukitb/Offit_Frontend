@@ -1,0 +1,53 @@
+.formEx {
+    background-color: #1a9d9d;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 200px;
+    align-items: center;
+    padding: 50px;
+
+}
+
+.formEx h1 {
+    color: white;
+
+}
+
+.min {
+    display: flex;
+    background-color: rgb(231, 226, 226);
+    color: rgb(42, 165, 83);
+    margin: 60px;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+
+textarea {
+    height: 500px;
+    width: 100%;
+}
+
+.formEx input {
+
+    margin: 20px;
+}
+
+button {
+    width: 50%;
+    color: rgb(153, 42, 165);
+    margin: 30px;
+    padding: 10px;
+    border-radius: 10px;
+
+}
+
+.min .left {
+
+    margin: 0px 10px;
+}
+
+.min .right {
+
+    margin: 0px 20px;
+}
