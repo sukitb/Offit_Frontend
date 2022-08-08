@@ -5,10 +5,9 @@ import ProfileImgMock from "../assets/1528342403-8548fc2c1a5c1fd30ac85385d2c2176
 import Calendar from "react-calendar";
 import Datebar from "../components/Datebar/Datebar";
 import Navbar from "../components/Navbar/Navbar";
+import StatusList from "../components/StatusList/StatusList"
 
 export function Home() {
-
-    // * Waiting for Back-end
     
     const [day, setSay] = useState(1)
     const [lastDay, setLastDay] = useState(1)
@@ -23,7 +22,7 @@ export function Home() {
       name={profileName} 
       day={day}
       lastDay={lastDay} />
-      {/* <StatusList /> */}
+      <StatusList />
     </div>
   );
 }
