@@ -1,53 +1,80 @@
-.formEx {
-    background-color: #1a9d9d;
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 200px;
+.form-post {
+    border: 1px dashed rgb(38, 154, 220);
+    flex-flow: column;
+    padding: 30px 30px;
+    gap: 10px;
+    border-radius: 2%;
+    box-shadow: 5px 4px 4px rgb(115, 115, 110);
     align-items: center;
-    padding: 50px;
-
 }
 
-.formEx h1 {
-    color: white;
-
+.form-post h1 {
+    color: #50a3a2;
+    /* background-color: #50a3a2; */
+    margin: 0px;
+    padding: 15px;
+    font-size: 29px;
+    
 }
 
-.min {
+.post-form-middle {
     display: flex;
-    background-color: rgb(231, 226, 226);
-    color: rgb(42, 165, 83);
-    margin: 60px;
-    padding: 10px 20px;
-    border-radius: 10px;
-}
-
-
-textarea {
-    height: 500px;
-    width: 100%;
-}
-
-.formEx input {
-
-    margin: 20px;
-}
-
-button {
-    width: 50%;
-    color: rgb(153, 42, 165);
-    margin: 30px;
+    flex-flow: column;
+    gap: 10px;
+    border: #50a3a2 0px dashed;
+    align-items: center;
     padding: 10px;
-    border-radius: 10px;
+}
+
+.post-form-middle p {
+    color: rgb(43, 194, 40);
+    font-weight: 500;
+    background-color: rgba(227, 232, 237, 0.451);
+    border-radius: 20px;
+    margin: 0px;
+    padding:  5px 10px;
+    
+}
+.form-texta {
+    border: #50a3a2 dashed 0px;
+    align-items: center;
+}
+
+.image-post {  
+    float:right;
+    width: 100px;
+}
+
+.image-post img{  
+    float:left;
+    width: 100px;
+}
+
+.input-post {
+    border: none;
+}
+
+input[type=file] {
+    width: 0px;
+    border: red;
+    
+ 
+}
+
+input[type=file]::file-selector-button  {
+    width: 2px;
 
 }
 
-.min .left {
-
-    margin: 0px 10px;
-}
-
-.min .right {
-
-    margin: 0px 20px;
+.image-upload>input {
+    display: none;
+    
+  }
+.post-button {
+    background-color: rgb(123, 220, 122);
+    width: 50%;
+    margin: 15px;
+    border-radius: 15px;
+    padding: 3px 7px;
+    border: 0px;
 }
