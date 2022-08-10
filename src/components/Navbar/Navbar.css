@@ -1,24 +1,19 @@
 .navbar {
     width: 100%;
-    background-color: rgb(55, 157, 180);
-    overflow: auto;
-    padding: 10px;
-    margin: -20px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .navbar a {
-    float: left;
-    width: 33% /* Four links of equal widths */
-    /* text-align: center; */
+  display: flex;
+  height: 100%;
+  align-items: center;
+  padding: 0px 10px;
+  font-size: 40px;
 }
 .navbar a img {
-    width: 30px;
-}
-.navbar-home {
-  text-align: start;
-}
-.navbar-logo {
-  text-align: center;
-}
-.navbar-profile {
-  text-align: end;
+  width: 100%;
+  height: 80%;
+  
 }
