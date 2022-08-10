@@ -21,18 +21,19 @@ function ActivityCardFormMyway() {
       </div>
       
       <input type="url" placeholder="Past your ref. URL here" {...register("Past your ref. URL here", {})} />
-      <select {...register("Do it my way", { required: true })}>
-        <option value="run">🏁  Choose activity  🏁 </option>
-        <option value="Run">🏃 Run</option>
-        <option value="Yoga">💪 Fitness</option>
-        <option value="Swimming">🏊 Swimming</option>
-        <option value="Bike">🚴 Bike</option>
-        <option value="Football">⚽ 🏐🥊🏸Football</option>
-        <option value="Climbing">🧗 Climbing</option>
-        <option value="Yoga">🧘 Yoga</option>
-        <option value="Yoga">🚩 Custom</option>
-      </select>
       
+     
+
+      <div className='img-radio'>
+        <div><input {...register("image")} type="radio" value="../111.png" /><img src="../src/assets/run.jpg" alt="" width="60px" /></div>
+        <div><input {...register("image")} type="radio" value="../112.png" /><img src="../src/assets/yoca.jpg" alt="" width="60px" /></div>
+        <div><input {...register("image")} type="radio" value="../113.png" /><img src="../src/assets/imageCard.png" alt="" width="60px" /></div>
+        <div><input {...register("image")} type="radio" value="/../114.png" /><img src="../src/assets/run.jpg" alt="" width="60px" /></div>
+        <div><input {...register("image")} type="radio" value="../115.png" /><img src="../src/assets/run.jpg" alt="" width="60px" /></div>
+        <div><input {...register("image")} type="radio" value="../116.png" /><img src="../src/assets/run.jpg" alt="" width="60px" /></div>
+      </div>
+
+
 
       <div className='time'>
         <div className='time-in'>

@@ -70,6 +70,21 @@
     align-items: flex-start;
 }
 
+.img-radio {
+    border: #50a3a2 2px dashed;
+    padding: 10px;
+    margin: 7px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.img-radio div {
+   align-items: center;
+    margin: 5px;
+    padding: 3px;
+    border: 1px dashed teal;
+    border-radius: 5px;
+}
 
 
 
