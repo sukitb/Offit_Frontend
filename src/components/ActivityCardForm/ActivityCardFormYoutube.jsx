@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import './ActivityCardFormMyWay.css'
 
-function ActivityCardFormMyway() {
+function ActivityCardFormYoutube() {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const onSubmit = data => console.log(data);
   console.log(errors);
@@ -20,19 +20,11 @@ function ActivityCardFormMyway() {
         <input {...register("Choose your style", { required: true })} type="radio" value="Follow youtube" />Follow youtube
       </div>
       
-      <input type="url" placeholder="Paste your ref. URL here" {...register("urlActivity", {})} />
+      <input type="url" placeholder="Paste Youtube URL here" {...register("video", {})} />
       
      
 
-      <div className='img-radio'>
-        <div><input {...register("img")} type="radio" value="../111.png" /><img src="../src/assets/run.jpg" alt="" width="60px" /></div>
-        <div><input {...register("img")} type="radio" value="../112.png" /><img src="../src/assets/yoca.jpg" alt="" width="60px" /></div>
-        <div><input {...register("img")} type="radio" value="../113.png" /><img src="../src/assets/imgCard.png" alt="" width="60px" /></div>
-        <div><input {...register("img")} type="radio" value="/../114.png" /><img src="../src/assets/run.jpg" alt="" width="60px" /></div>
-        <div><input {...register("img")} type="radio" value="../115.png" /><img src="../src/assets/run.jpg" alt="" width="60px" /></div>
-        <div><input {...register("img")} type="radio" value="../116.png" /><img src="../src/assets/run.jpg" alt="" width="60px" /></div>
-      </div>
-
+     
 
 
       <div className='time'>
@@ -50,4 +42,4 @@ function ActivityCardFormMyway() {
   );
 }
 
-export default ActivityCardFormMyway;
+export default ActivityCardFormYoutube;
