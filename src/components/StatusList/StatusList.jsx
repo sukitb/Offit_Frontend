@@ -2,7 +2,7 @@ import StatusCard from '../StatusCard/StatusCard'
 import './StatusList.css'
 import cardInfo from './PostInfo';
 
-function createCard(cardInfo) {
+function createCard(cardInfo, props) {
     return (
         <StatusCard 
             key={cardInfo.id}
