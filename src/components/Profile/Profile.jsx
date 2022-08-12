@@ -68,7 +68,8 @@ export function Profile(props) {
     margin: 20px 0px;
   `;
   const FullName = styled.span`
-    font-size: 24px;
+    font-size: 32px;
+    font-weight: 700;
   `;
 
   const UserName = styled.span`

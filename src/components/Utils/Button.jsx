@@ -7,11 +7,15 @@ const StyledButton = styled(Button)({
     textTransform: 'none',
     fontSize: 16,
     padding: '6px 12px',
-    border: '1px solid',
+   
     lineHeight: 1.5,
     backgroundColor: 'white',
     borderColor: '#161b22',
     color: '#161b22',
+    borderWidth: "5px 3px 3px 5px",
+    borderRadius:"95% 1% 97% 1%/4% 94% 1% 95%",
+    border: "solid black",
+    borderColor: "black",
     fontFamily: [
       '-apple-system',
       'BlinkMacSystemFont',
@@ -26,7 +30,7 @@ const StyledButton = styled(Button)({
     ].join(','),
     '&:hover': {
       backgroundColor: '#a6a8ae',
-      borderColor: '#a6a8ae',
+      borderColor: 'black',
       boxShadow: 'none',
     },
     
