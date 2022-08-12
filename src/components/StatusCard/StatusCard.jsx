@@ -12,7 +12,6 @@ function StatusCard(props) {
                 <h6 className='date'><br />{props.datePost}</h6>
             </div>
             <img />
-            
         </div>
     )
 }
