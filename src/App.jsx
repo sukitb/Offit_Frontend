@@ -1,6 +1,15 @@
+import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
-import AddActiveForm from "./components/AddActiveForm/AddActiveForm";
-// import CreatPost from "./components/FormExercisePost/FormExercisePost";
+// pages
+import { Home } from "./Pages/Home";
+import './App.css'
+
+// todo add AddActivity
+// todo add EditProfile
+
+import ActivityCardList from './components/ActivityCardList/ActivityCardList'
+
 
 
 
@@ -8,8 +17,16 @@ import AddActiveForm from "./components/AddActiveForm/AddActiveForm";
 
 function App() {
   return (
-    <AddActiveForm />
+    <div className="App">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          {/* <Route path="/addactivity" element={<AddActivity />} /> */}
+          
+        </Routes>
+      </BrowserRouter>
+    </div>
+  );
+}
 
-)
-  }
 export default App;

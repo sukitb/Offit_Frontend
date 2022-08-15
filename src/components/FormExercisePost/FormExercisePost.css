@@ -1,0 +1,80 @@
+.form-post {
+    border: 1px dashed rgb(38, 154, 220);
+    flex-flow: column;
+    padding: 30px 30px;
+    gap: 10px;
+    border-radius: 2%;
+    box-shadow: 5px 4px 4px rgb(115, 115, 110);
+    align-items: center;
+}
+
+.form-post h1 {
+    color: #50a3a2;
+    /* background-color: #50a3a2; */
+    margin: 0px;
+    padding: 15px;
+    font-size: 29px;
+    
+}
+
+.post-form-middle {
+    display: flex;
+    flex-flow: column;
+    gap: 10px;
+    border: #50a3a2 0px dashed;
+    align-items: center;
+    padding: 10px;
+}
+
+.post-form-middle p {
+    color: rgb(43, 194, 40);
+    font-weight: 500;
+    background-color: rgba(227, 232, 237, 0.451);
+    border-radius: 20px;
+    margin: 0px;
+    padding:  5px 10px;
+    
+}
+.form-texta {
+    border: #50a3a2 dashed 0px;
+    align-items: center;
+}
+
+.image-post {  
+    float:right;
+    width: 100px;
+}
+
+.image-post img{  
+    float:left;
+    width: 100px;
+}
+
+.input-post {
+    border: none;
+}
+
+input[type=file] {
+    width: 0px;
+    border: red;
+    
+ 
+}
+
+input[type=file]::file-selector-button  {
+    width: 2px;
+
+}
+
+.image-upload>input {
+    display: none;
+    
+  }
+.post-button {
+    background-color: rgb(123, 220, 122);
+    width: 50%;
+    margin: 15px;
+    border-radius: 15px;
+    padding: 3px 7px;
+    border: 0px;
+}
