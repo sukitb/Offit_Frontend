@@ -1,6 +1,7 @@
 import React from 'react'
 import ActivityCard from '../ActivityCard/ActivityCard';
 import './ActivityCardList.css'
+import CreateForm from '../FormExercisePost/FormExercisePost'
 
 function ActivityCardList() {
 
@@ -29,7 +30,15 @@ function ActivityCardList() {
         activity: "yoca3",
         durationTime: "2hr 5s",
        
-    }
+    },
+    {
+      id: 4,
+      img: "",
+      video: "https://www.youtube.com/embed/yMNLa17g9uc",
+      activity: "yoca3",
+      durationTime: "2hr 5s",
+     
+  }
 ]
 
   function youtube_parser(url){

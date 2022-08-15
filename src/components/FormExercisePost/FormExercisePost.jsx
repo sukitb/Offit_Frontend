@@ -1,74 +1,51 @@
 import React, { useState } from "react";
-import './FormExercisePost.css'
-
-
+import "./FormExercisePost.css";
+import { useForm } from "react-hook-form";
+import styled from "@emotion/styled";
 
 function CreatePost(props) {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => console.log(data);
+  console.log(errors);
 
-  const [makePost, setMakePost] = useState({
-    activity: "Activity2",
-    durationTime: "durationTime2",
-    textPost:"",
-    datePost:"datePost",
-   
-   
-  });
+  const ButtonContainer = styled.div`
+    display: flex;
+  `
 
-  function handleChange(event) {
-    const { name, value } = event.target;
-
-    setMakePost(prevValue => {
-      return {
-        ...prevValue,
-        [name]: value
-      };
-    });
+  const Post = styled.button`
+  color: white;
+  border: 3px solid #4abc9c;
+  height: 2em;
+  font-size: 20px;
+  background-color: #4abc9c;
+  border-radius: 15px;
+  width: 70px;
+  /* box-shadow: 10px 10px 0px -2px #38c653; */
+  :hover {
+    background-color: #59e2bb;
+    border-color: #59e2bb;
+    box-shadow: none;
   }
-
-  const [img, setImg] = useState('./111.png')
-  function onImageChange(event) {
-    const [file] = event.target.files;
-    setImg(URL.createObjectURL(file));
-  }
-
-//   function submitPost(event) {
-//     const date = new Date();
-//     props.onAdd(makePost);
-//     setMakePost({
-//       activity: "",
-//       durationTime: "",
-//       textPost:"",
-//       datePost: date.toLocaleTimeString(),
-//       img:"./111.png"
-//     });
-//     event.preventDefault();
-//   }
-
-  
-
-
- 
+`;
 
   return (
-    <div className='form-post'>
-        <h1>What's on your mind? </h1>
-
-        <div className="post-form-middle">
-            <p onChange={handleChange} > {makePost.activity} {makePost.durationTime}</p>
-            <textarea className="form-texta" onChange={handleChange} name="textPost" id="" cols="30" rows="10" placeholder="What is your mind?" value={makePost.textPost}></textarea>
-
-            <div className="image-post input-post" >  
-                <label htmlFor="file-input" >
-                    <img className="" src={img} alt="" />
-                </label>
-                <input name="img" type="file" id="file-input" onChange={onImageChange} />
-            </div>
-        </div>
-        
-        
-        <button className="post-button"  >POST</button>
+    <div className="form-post">
+      <div className="post-form-middle">
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <textarea {...register("Post", { required: true, maxLength: 80 })} cols="20" rows="5" placeholder="What's on your mind ?" />
+          <ButtonContainer>
+            
+            
+            <Post type="submit" className="post-button">Post</Post>
+            </ButtonContainer>
+        </form>
+      </div>
     </div>
-  )
+  );
 }
 
 export default CreatePost;

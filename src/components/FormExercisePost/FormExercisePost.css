@@ -1,11 +1,16 @@
 .form-post {
-    border: 1px dashed rgb(38, 154, 220);
     flex-flow: column;
     padding: 30px 30px;
-    gap: 10px;
     border-radius: 2%;
-    box-shadow: 5px 4px 4px rgb(115, 115, 110);
     align-items: center;
+}
+
+textarea {
+    border-radius: 4px;
+    font-size: 16px;
+    resize: none;
+    border: 2px solid #3f52a0;
+    padding: 12px 12px;
 }
 
 .form-post h1 {
@@ -14,7 +19,6 @@
     margin: 0px;
     padding: 15px;
     font-size: 29px;
-    
 }
 
 .post-form-middle {
@@ -35,10 +39,6 @@
     padding:  5px 10px;
     
 }
-.form-texta {
-    border: #50a3a2 dashed 0px;
-    align-items: center;
-}
 
 .image-post {  
     float:right;
@@ -57,19 +57,16 @@
 input[type=file] {
     width: 0px;
     border: red;
-    
- 
 }
 
 input[type=file]::file-selector-button  {
     width: 2px;
-
 }
 
 .image-upload>input {
     display: none;
-    
   }
+
 .post-button {
     background-color: rgb(123, 220, 122);
     width: 50%;

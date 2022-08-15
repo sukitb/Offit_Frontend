@@ -20,7 +20,6 @@ function StatusList() {
     return (
         <div className='status-list'>
             {cardInfo.map(createCard)}
-           
         </div>
     )
 }
