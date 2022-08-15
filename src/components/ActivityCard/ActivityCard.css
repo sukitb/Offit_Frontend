@@ -10,6 +10,11 @@
      box-shadow: 5px 5px 5px rgb(132, 132, 132);
      gap: 10px 20px;
      overflow: hidden;
+     height: 500px;
+}
+
+.activity-card img {
+    max-width: 250px;
 }
 
 

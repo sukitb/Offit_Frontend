@@ -3,7 +3,6 @@ import { useState } from "react";
 import './Home.css'
 import ProfileImgMock from "../assets/ProfileMockingSqaure.jpg"
 import Calendar from "react-calendar";
-import Datebar from "../components/Datebar/Datebar";
 import Navbar from "../components/Navbar/Navbar";
 import StatusList from "../components/StatusList/StatusList"
 import styled from "styled-components";
@@ -45,7 +44,6 @@ export function Home() {
     return (
     <div className="Home">
       <Navbar />
-      {/* <Datebar /> */}
       <Main>
       <Left>
       <Profile />
