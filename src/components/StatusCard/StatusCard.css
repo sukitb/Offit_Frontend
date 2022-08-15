@@ -1,29 +1,61 @@
 .card {
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns:30% 65%;
     align-items: center;
-    margin: 10px 0px;
-    background-color: white;
+    border-width: 5px 3px 3px 5px;
+    display: flex;
+    border: 3px solid #3f52a0;
+    box-shadow: 10px 12px 0px -2px #3f52a0;
+    background-color: #ffff;
+    margin: 0px 30px 70px 30px;
 }
 
 .card .border img {
-    width: 100%;  
-    
+    width: 100%;
+    max-width: 250px;  
+    z-index: 12;
+}
+
+.card .card-body  {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 20px;
+    color: #3f52a0;
+}
+
+.card .card-body .title  {
+    display: flex;
+    align-items: center;
+    margin: 10px 0px;
     
 }
 
-.card .card-body {
-    justify-content:space-between;
-    font-size: 95%;
-
+.card .card-body .content  {
+    display: flex;
+    align-items: center;
+    margin: 10px 0px;
 }
 
-.card .card-body .title {
-    color: green;
-    
-    
+.card .card-body span {
+    margin: 10px 0px;
+    font-size: 24px;
 }
+
+.card .card-body .title {  
+     font-size: 24px;
+}
+
+.card .card-body svg {
+    min-width: 26px;
+    width: 26px;
+    height: 26px;
+    padding: 0px 16px;
+}
+
+svg path {
+    stroke: #3f52a0; 
+    stroke-width: 2;
+    fill: #3f52a0;
+}
+
 /* .card .card-body .text {
     font-size: 180%;
     line-height: 120%;
@@ -37,8 +69,17 @@
 
 @media screen and (max-width: 768px) {
 .card {
-      
-      display: block;
-      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      margin-bottom: 70px;
+    }
+
+.card .card-body .content  {
+        align-items: center;
+        margin: 10px 0px;
+        line-height: 2em;
+        
     }
   }

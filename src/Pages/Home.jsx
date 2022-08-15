@@ -8,6 +8,8 @@ import Navbar from "../components/Navbar/Navbar";
 import StatusList from "../components/StatusList/StatusList"
 import styled from "styled-components";
 
+import ActivityCardList from "../components/ActivityCardList/ActivityCardList";
+
 export function Home() {
     
     const [day, setSay] = useState(1)
@@ -46,21 +48,16 @@ export function Home() {
       {/* <Datebar /> */}
       <Main>
       <Left>
-      <Profile 
-      imgSrc={ProfileImgMock} 
-      name={profileName}
-      lastName={profileLastName}
-      userName={userName}
-      day={day}
-      lastDay={lastDay}
-      bmi={bmi}
-      />
+      <Profile />
       </Left>
       <Right>
       <StatusList
       />
       </Right>
+     
+     
       </Main>
+      
     </div>
   );
 }

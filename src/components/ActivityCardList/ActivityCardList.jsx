@@ -4,6 +4,8 @@ import './ActivityCardList.css'
 
 function ActivityCardList() {
 
+  //todo useState
+
   const activityInfo = [
     {
         id: 1,

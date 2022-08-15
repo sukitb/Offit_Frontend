@@ -10,7 +10,7 @@ import './App.css'
 // todo add EditProfile
 
 import ActivityCardList from './components/ActivityCardList/ActivityCardList'
-import EditProfileForm from './components/EditProfileForm/EditProfileForm'
+
 
 
 
@@ -23,7 +23,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           {/* <Route path="/addactivity" element={<AddActivity />} /> */}
-          {/* <Route path="/editprofile" element={<EditProfile />} /> */}
+          
         </Routes>
       </BrowserRouter>
     </div>
