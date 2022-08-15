@@ -12,15 +12,17 @@ import { Link } from "react-router-dom";
 
 import { useForm } from "react-hook-form";
 import EditProfile from "../EditProfileForm/EditProfile";
-
+import EditProfileForm from "../EditProfileForm/EditProfileForm"
 export function Profile(props) {
 
   
   
   const Profile = styled.div`
     width: auto;
-    height: 100%;
-    padding: 10px;
+    
+    padding: 0px 20px;
+    position: sticky;
+    top: 20px;
 
     @media screen and (max-width: 768px) {
       width: auto;
@@ -66,6 +68,11 @@ export function Profile(props) {
     flex-direction: column;
 
     margin: 20px 0px;
+    padding: 20px;
+    border: 3px solid #3f52a0;
+    box-shadow: 10px 12px 0px -2px #3f52a0;
+    font-size: 20px;
+    background-color: white;
   `;
   const FullName = styled.span`
     font-size: 32px;
@@ -117,8 +124,8 @@ console.log(errors);
           
           
         
-          <EditProfile />
-       
+          {/* <EditProfile /> */}
+          <EditProfileForm />
 
         <StatCard>
           <Detail>Streak</Detail>
