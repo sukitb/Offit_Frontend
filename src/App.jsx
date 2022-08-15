@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 // pages
 import { Home } from "./Pages/Home";
+import AddActivities from "./Pages/AddActivities";
 import './App.css'
 
 // todo add AddActivity
@@ -22,7 +23,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           {/* <Route path="/addactivity" element={<AddActivity />} /> */}
-          
+          <Route path="/add-activities" element={<AddActivities />} />
         </Routes>
       </BrowserRouter>
     </div>

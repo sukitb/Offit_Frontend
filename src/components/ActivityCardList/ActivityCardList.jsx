@@ -9,8 +9,8 @@ function ActivityCardList() {
   const activityInfo = [
     {
         id: 1,
-        img: "../src/assets/imageCard.png",
-        video: "https://www.youtube.com/watch?v=-SSYX8sIOmM",
+        img: "",
+        video: "https://www.youtube.com/watch?v=ml6cT4AZdqI",
         activity: "yoca",
         durationTime: "3hr 5s",
        
@@ -24,7 +24,7 @@ function ActivityCardList() {
     },
     {
         id: 3,
-        img: "../src/assets/run.jpg",
+        img: "",
         video: "https://www.youtube.com/embed/yMNLa17g9uc",
         activity: "yoca3",
         durationTime: "2hr 5s",
