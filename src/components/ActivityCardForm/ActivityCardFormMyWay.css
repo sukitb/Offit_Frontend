@@ -1,0 +1,90 @@
+.form-activity{
+    display:flex;
+    flex-direction:column;
+    border: #50a3a2  2px solid;
+    padding: 20px;
+    align-items: flex-start;
+}
+
+.form-activity .time {
+    display:flex;
+    width: 100px;
+}
+
+.form-activity input {
+    border: #50a3a2 1px solid;
+    border-radius: 5px;
+    margin: 0px 10px;
+    padding: 5px 10px;
+    margin: 0px 10px 15px;
+    
+}
+
+.form-activity select {
+    border: #50a3a2 1px solid;
+    border-radius: 5px;
+    margin: 0px 10px 15px;
+    padding: 5px 10px;
+    margin: 10px;
+ 
+}
+
+.form-activity input[type=text]::placeholder {
+   color: #50a3a2 ;
+  
+    
+ 
+}
+
+.form-activity input[type=submit] {
+    color: rgb(245, 248, 248);
+    background-color:#50a3a2 ; 
+    padding: 5px 10px;
+    width: 50%;
+    margin-left: 54px;   
+   
+ }
+
+ .form-activity input[type=number] {
+   width: 60px;
+   
+ }
+
+ .form-activity input[type=url] {
+    margin-top: 5px;
+    
+  }
+
+.label {
+    font-size:13px;
+    font-weight: 600;
+    vertical-align: text-bottom;
+   
+} 
+
+.radio-input {
+    font-size:13px;
+}
+
+.time-in {
+    align-items: flex-start;
+}
+
+.img-radio {
+    border: #50a3a2 2px dashed;
+    padding: 10px;
+    margin: 7px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.img-radio div {
+   align-items: center;
+    margin: 5px;
+    padding: 3px;
+    border: 1px dashed teal;
+    border-radius: 5px;
+}
+
+
+
