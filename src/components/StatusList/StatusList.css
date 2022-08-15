@@ -1,5 +1,15 @@
 .status-list {
-    background-color: rgba(212, 223, 226, 0.679);
-    padding: 15px;
-    border: 2px solid;
+    width: 100%;
+    
+    /* grid-template-columns: repeat(3,1fr); */
 }
+
+
+
+@media screen and (max-width: 768px) {
+    .status-list {
+          
+          display: block;
+          margin-bottom: 20px;
+        }
+      }

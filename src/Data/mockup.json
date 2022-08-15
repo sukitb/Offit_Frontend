@@ -1,0 +1,85 @@
+{
+  "_id": "autoGenerate",
+  "userInfo": {
+    "firstName": "Nam",
+    "lastName": "Prachatai",
+    "weight": 160,
+    "height": 43,
+    "profileImg": "string",
+    "bmi": 23.4
+  },
+
+  "activityInfo": [
+    {
+      "id": 1,
+      "title": "Yoga",
+
+      "activity": [
+        {
+          "type": "youtube",
+          "url": ""
+        },
+        {
+          "type": "doItMyWay",
+          "url": "",
+          "thumbnail": ""
+        }
+      ],
+
+      "duration": 600,
+      "createAt": "2012-04-23T18:25:43.511Z",
+      "doneAt": "2022-08-10T18:25:43.511Z"
+    },
+    {
+        "id": 2,
+        "title": "Running",
+  
+        "activity": [
+          {
+            "type": "youtube",
+            "url": ""
+          },
+          {
+            "type": "doItMyWay",
+            "url": "",
+            "thumbnail": ""
+          }
+        ],
+  
+        "duration": 600,
+        "createAt": "2012-04-23T18:25:43.511Z",
+        "doneAt": "2022-08-10T18:25:43.511Z"
+      }
+  ],
+
+  "postInfo": [
+    {
+      "id": 1,
+      "activity": [
+        {
+          "id": 1,
+          "title": "Yoga",
+
+          "activity": [
+            {
+              "type": "youtube",
+              "url": ""
+            },
+            {
+              "type": "doItMyWay",
+              "url": "",
+              "thumbnail": ""
+            }
+          ],
+
+          "duration": 600,
+          "createAt": "2012-04-23T18:25:43.511Z",
+          "doneAt": "2022-08-10T18:25:43.511Z"
+        }
+      ],
+      "message": "เรามาอย่างเป็นมิตร",
+      "img": "",
+      "createAt": "2022-08-10T20:25:43.511Z"
+    }
+  ]
+}

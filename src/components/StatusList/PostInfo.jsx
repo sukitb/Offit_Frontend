@@ -20,9 +20,33 @@ const cardInfo =  [
         img: "../src/assets/run.jpg",
         activity: "yoca3",
         durationTime: "1hr 5s",
-        textPost: "ออกกำลังกายเหนือยน่ะแต่ก็ต้องทำ",
+        textPost: "ออกกำลังกายเหนื่อยน่ะแต่ก็ต้องทำ",
         datePost: "WED, 21 AUG 2020"
-    }
+    },
+    {
+        id: 4,
+        img: "../src/assets/aa.png",
+        activity: "yoca3",
+        durationTime: "1hr 5s",
+        textPost: "ออกกำลังกายเหนื่อยน่ะแต่ก็ต้องทำ",
+        datePost: "WED, 21 AUG 2020"
+    },
+    {
+        id: 3,
+        img: "../src/assets/run.jpg",
+        activity: "yoca3",
+        durationTime: "1hr 5s",
+        textPost: "ออกกำลังกายเหนื่อยน่ะแต่ก็ต้องทำ",
+        datePost: "WED, 21 AUG 2020"
+    },
+    {
+        id: 3,
+        img: "../src/assets/run.jpg",
+        activity: "yoca3",
+        durationTime: "1hr 5s",
+        textPost: "ออกกำลังกายเหนื่อยน่ะแต่ก็ต้องทำ",
+        datePost: "WED, 21 AUG 2020"
+    },
 ]
 
 export default cardInfo;
