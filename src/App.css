@@ -1,8 +1,9 @@
 #root {
+  max-width: 1280px;
   width: 100%;
   margin: 0 auto;
 
-background-color: #f4f4fb;
+  
   
 }
 
@@ -33,9 +34,6 @@ background-color: #f4f4fb;
   }
 }
 
-.card {
-  padding: 2em;
-}
 
 .read-the-docs {
   color: #888;

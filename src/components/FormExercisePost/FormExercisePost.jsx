@@ -17,13 +17,15 @@ function CreatePost(props) {
   `
 
   const Post = styled.button`
-  color: white;
+  color: black;
   border: 3px solid #4abc9c;
   height: 2em;
   font-size: 20px;
-  background-color: #4abc9c;
+  background-color: white;
   border-radius: 15px;
   width: 70px;
+  border: 3px solid #4abc9c;
+    box-shadow: 6px 8px 0px -2px #4abc9c;
   /* box-shadow: 10px 10px 0px -2px #38c653; */
   :hover {
     background-color: #59e2bb;

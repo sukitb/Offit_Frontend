@@ -14,9 +14,13 @@ function StatusCard(props) {
       </div>
       <div className="card-body">
         <div className="title">
+          <div>
           <TickIcon />
           <span> {props.activity} </span>
+          </div>
+          <div>
            <StopWatch /> <span>  {props.durationTime} </span>
+           </div>
         </div>
         <div className="content">
           <PencilIcon /> 

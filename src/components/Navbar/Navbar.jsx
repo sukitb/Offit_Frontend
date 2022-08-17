@@ -11,7 +11,7 @@ function Navbar() {
           <FaRegPlusSquare />
         </a>
       </Link>
-      <Link to="/">
+      <Link to="/add-activities">
         <a className="navbar-logo" href="#">
           <img src="./src/assets/Flog.png" />
         </a>

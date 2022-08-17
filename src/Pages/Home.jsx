@@ -8,6 +8,7 @@ import StatusList from "../components/StatusList/StatusList"
 import styled from "styled-components";
 
 import ActivityCardList from "../components/ActivityCardList/ActivityCardList";
+import NavTabs from "../components/์ฺNavtab/NavTabs";
 
 export function Home() {
     
@@ -43,7 +44,8 @@ export function Home() {
   
     return (
     <div className="Home">
-      <Navbar />
+      
+      
       <Main>
       <Left>
       <Profile />

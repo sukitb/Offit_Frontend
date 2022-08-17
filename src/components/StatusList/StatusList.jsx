@@ -19,7 +19,9 @@ function createCard(cardInfo, props) {
 function StatusList() {
     return (
         <div className='status-list'>
+            
             {cardInfo.map(createCard)}
+            
         </div>
     )
 }
