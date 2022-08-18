@@ -1,16 +1,15 @@
 .activity-card {
-     width: 250px;
+     width: 240px;
      border: #50a3a2 1px solid;
-     font-family: "Source Sans Pro", sans-serif;
      padding: 15px;
      margin: 10px;
-     border-radius: 10px; 
      display: flex; 
      align-items: center;
      justify-content: center;
      flex-direction: column;
-     border: 3px solid #3f52a0;
-    box-shadow: 6px 8px 0px -2px #3f52a0;
+     border: 1px solid transparent;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px 1px #3f52a045;
     background-color: #ffff;
      height: 100%;
      
@@ -29,8 +28,8 @@
 
 .activity-card p {
     color: #3f52a0;
-    font-weight: 600;
-    margin: 7px;
+    font-size: 1.5em;
+    margin: 15px;
 }
 
 .activity-card .post-button {
@@ -51,14 +50,14 @@
     color: white;
 }
 
-.float-right {
-    float: right;
-    padding-right: 20px;
+.title {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
 }
 
-.float-left {
-    float: left;
-    padding-left: 20px;
+h3 {
+    font-size: 24px;
+    color: #3f52a0;
 }
-
 

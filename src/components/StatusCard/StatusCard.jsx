@@ -7,31 +7,34 @@ import { ReactComponent as CalendarIcon } from "./calendar.svg";
 
 function StatusCard(props) {
   return (
-    <div className="card ">
+    <div className="status-card">
       
-      <div className="border">
+      <div className="card ">
+      <div className="img-container">
         <img src={props.img} />
       </div>
-      <div className="card-body">
-        <div className="title">
-          <div>
-          <TickIcon />
-          <span> {props.activity} </span>
+        <div className="border"></div>
+        <div className="card-body">
+          <div className="title">
+            <div>
+              <TickIcon />
+              <h3> {props.activity} </h3>
+            </div>
+            <div>
+              <StopWatch /> <h3> {props.durationTime} </h3>
+            </div>
           </div>
-          <div>
-           <StopWatch /> <span>  {props.durationTime} </span>
-           </div>
+          <div className="content">
+            
+            <span className="text">{props.textPost} </span>
+          </div>
+          <div className="content">
+            <CalendarIcon />
+            <span className="date">{props.datePost}</span>
+          </div>
         </div>
-        <div className="content">
-          <PencilIcon /> 
-          <span className="text">{props.textPost} </span>
-        </div>
-        <div className="content">
-        <CalendarIcon/><span className="date">{props.datePost}</span>
-        </div>
+        <img />
       </div>
-      <img />
-      
     </div>
   );
 }

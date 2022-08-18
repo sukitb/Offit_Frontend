@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./FormExercisePost.css";
 import { useForm } from "react-hook-form";
 import styled from "@emotion/styled";
+import Button from "@mui/material/Button";
 
 function CreatePost(props) {
   const {
@@ -16,20 +17,41 @@ function CreatePost(props) {
     display: flex;
   `
 
+const StyledButton = styled(Button)({
+  margin: "12px",
+  boxShadow: "none",
+  textTransform: "none",
+  fontSize: 20,
+  fontWeight: 600,
+  padding: "6px 12px",
+  fontFamily: "Comic Neue",
+  lineHeight: 1.5,
+  backgroundColor: "white",
+  border: "3px solid #3f52a0",
+  color: "black",
+  boxShadow: "10px 10px 0px -2px #3f52a0",
+  backgroundColor: "#ffff",
+  "&:hover": {
+    backgroundColor: "#3f52a0",
+    borderColor: "black",
+    boxShadow: "none",
+  },
+});
+
   const Post = styled.button`
   color: black;
-  border: 3px solid #4abc9c;
+  border: 3px solid #3f52a0;
   height: 2em;
   font-size: 20px;
   background-color: white;
   border-radius: 15px;
   width: 70px;
-  border: 3px solid #4abc9c;
-    box-shadow: 6px 8px 0px -2px #4abc9c;
-  /* box-shadow: 10px 10px 0px -2px #38c653; */
+  border: 3px solid #3f52a0;
+    box-shadow: 6px 8px 0px -2px #3f52a0;
+  /* box-shadow: 10px 10px 0px -2px #3f52a0; */
   :hover {
-    background-color: #59e2bb;
-    border-color: #59e2bb;
+    background-color: #3f52a0;
+    border-color: #3f52a0;
     box-shadow: none;
   }
 `;
@@ -42,7 +64,7 @@ function CreatePost(props) {
           <ButtonContainer>
             
             
-            <Post type="submit" className="post-button">Post</Post>
+            <StyledButton type="submit" className="post-button">Post</StyledButton>
             </ButtonContainer>
         </form>
       </div>

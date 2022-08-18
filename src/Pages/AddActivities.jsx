@@ -3,28 +3,34 @@ import ActivityCardList from "../components/ActivityCardList/ActivityCardList";
 import "./AddActivities.css";
 import CreatePost from "../components/FormExercisePost/FormExercisePost";
 import styled from "@emotion/styled";
+import Box from "@mui/material/Box";
+import Fab from "@mui/material/Fab";
+import { AiOutlinePlus } from "react-icons/ai";
+import AddIcon from "@mui/icons-material/Add";
+import Button from "@mui/material/Button";
+import ActivityCardFormMyway from "../components/ActivityCardForm/ActivityCardFormMyWay";
+import EditActivityCardForm from "../components/ActivityCardForm/EditActivityCardForm";
 
 export default function AddActivities() {
   const Main = styled.div`
-    margin-top: 100px;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    
   `;
 
-  const Left = styled.div`
-    grid-column: 1/5;
-  `;
-
-  const Right = styled.div`
-    grid-column: 5/6;
-  `;
+  const Top = styled.div`
+    display: flex;
+    padding: 10px;
+  `
 
   return (
     <div className="AddActivities">
+      <Top>
+      <ActivityCardFormMyway />
+
+      </Top>
       <Main>
-        <Left>
+        {/* <EditActivityCardForm /> */}
           <ActivityCardList />
-        </Left>
+        
       </Main>
     </div>
   );

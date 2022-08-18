@@ -20,7 +20,7 @@ export function Home() {
     const [userName, setUserName] = useState("nam_zaa")
 
     const Main = styled.div`
-      margin-top: 100px;
+      margin-top: 20px;
       display: grid;
       grid-template-columns: repeat(4,1fr);
       

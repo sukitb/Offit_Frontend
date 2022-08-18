@@ -1,6 +1,5 @@
 .form-post {
     flex-flow: column;
-    padding: 30px 30px;
     border-radius: 2%;
     align-items: center;
 }
@@ -9,7 +8,7 @@ textarea {
     border-radius: 4px;
     font-size: 16px;
     resize: none;
-    border: 2px solid #4abc9c;
+    border: 2px solid #3f52a0;
     padding: 12px 12px;
 }
 

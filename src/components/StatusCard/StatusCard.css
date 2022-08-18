@@ -1,4 +1,25 @@
+.status-card {
+    display: grid;
+    
+}
+
+.status-card {
+   margin: 10px;
+}
+
+.img-container {
+    display:flex;
+    justify-content: center;
+
+}
+
+.img-container img {
+    max-width: 250px;
+    margin: 20px 0px;
+}
+
 .card {
+
     padding: 15px;
     background-color: #ffff;
     margin: 10px;
@@ -8,8 +29,9 @@
     /* border: 1px solid transparent;
     border-radius: 8px;
     box-shadow: 0px 2px 4px rgba(0,0,0,.1); */
-    border: 3px solid #3f52a0;
-    box-shadow: 6px 8px 0px -2px #3f52a0;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px 1px #3f52a045;
 }
 
 .card .border img {
@@ -34,28 +56,29 @@
     display: flex;
     align-items: center;
     margin: 10px 0px;
-    
 }
 
 .card .card-body .content  {
     margin: 10px 0px;
     align-items: center;
-    
 }
 
 .card .card-body span {
-    
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .card .card-body .title {  
-     font-size: 24px;
+     font-size: 20px;
 }
 
 .card .card-body svg {
     min-width: 26px;
     width: 26px;
     height: 26px;
+    padding: 0px 16px;
+}
+
+span {
     padding: 0px 16px;
 }
 
@@ -77,6 +100,10 @@ svg path {
 }
 
 @media screen and (max-width: 768px) {
+
+.status-card {
+        display: block;
+    }
 .card {
       display: flex;
       align-items: center;
