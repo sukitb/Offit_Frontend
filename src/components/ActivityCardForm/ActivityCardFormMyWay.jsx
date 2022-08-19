@@ -9,8 +9,8 @@ import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import AddIcon from "@mui/icons-material/Add";
+
+
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import Stretch from "../../assets/activities-icon/Bodystrench.svg";
@@ -69,11 +69,11 @@ function ActivityCardFormMyway() {
     },
   });
 
-  const StyledAddIcon = styled(AddIcon)`
-    path {
-      stroke: #3f52a0;
-    }
-  `;
+  // const StyledAddIcon = styled(AddIcon)`
+  //   path {
+  //     stroke: #3f52a0;
+  //   }
+  // `;
   const ButtonText = styled.span`
     font-size: 1em;
     font-family: "Comic Neue";
@@ -96,7 +96,7 @@ function ActivityCardFormMyway() {
     <div>
       <StyledButton
         onClick={handleClickOpen}
-        startIcon={<StyledAddIcon fontSize="large" />}
+        
       >
         <ButtonText>New Activity</ButtonText>
       </StyledButton>
@@ -126,7 +126,7 @@ function ActivityCardFormMyway() {
 
           <Accordion>
             <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
+              
               aria-controls="panel1a-content"
             >
               Choose image

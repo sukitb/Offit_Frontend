@@ -14,6 +14,9 @@ import { useForm } from "react-hook-form";
 import EditProfile from "../EditProfileForm/EditProfile";
 import EditProfileForm from "../EditProfileForm/EditProfileForm"
 
+import Avatar from "../../assets/avatar/avatar-1.svg"
+import { avatarGroupClasses } from "@mui/material";
+
 
 export function Profile(props) {
   
@@ -91,8 +94,8 @@ export function Profile(props) {
   `;
 
 const userInfo = {
-  firstName:  "Nam",
-  lastName: "Pratai",
+  firstName:  "User",
+  lastName: "User",
   profileImg: "",
   weight: 45,
   height: 160
@@ -111,7 +114,7 @@ const bmiCal = (height, weight) => {
   return (
     <Profile>
       <ProfileImgContainer>
-        <ProfileImg src={profileMockImg} />
+        <ProfileImg src={Avatar} />
       </ProfileImgContainer>
 
       <ProfileContentContainer>
