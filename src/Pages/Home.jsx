@@ -8,6 +8,8 @@ import StatusList from "../components/StatusList/StatusList"
 import styled from "styled-components";
 
 import ActivityCardList from "../components/ActivityCardList/ActivityCardList";
+import NavTabs from "../components/์ฺNavtab/NavTabs";
+import BackgroundImg from "../assets/background.svg"
 
 export function Home() {
     
@@ -19,7 +21,7 @@ export function Home() {
     const [userName, setUserName] = useState("nam_zaa")
 
     const Main = styled.div`
-      margin-top: 100px;
+      margin-top: 20px;
       display: grid;
       grid-template-columns: repeat(4,1fr);
       
@@ -40,10 +42,22 @@ export function Home() {
     const Right = styled.div`
       grid-column: 2/5;
     `
+
+const Background = styled.div`
+    position: absolute;
+    z-index: -1;
+    max-width: 500px;
+    bottom: 20px;
+
+    img {
+      max-width: 100%;
+    }
+`
   
     return (
     <div className="Home">
-      <Navbar />
+      
+      
       <Main>
       <Left>
       <Profile />
@@ -53,7 +67,9 @@ export function Home() {
       />
       </Right>
      
-     
+      <Background>
+      <img src={BackgroundImg}></img>
+      </Background>
       </Main>
       
     </div>

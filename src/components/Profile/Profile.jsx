@@ -13,9 +13,9 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import EditProfile from "../EditProfileForm/EditProfile";
 import EditProfileForm from "../EditProfileForm/EditProfileForm"
-export function Profile(props) {
 
-  
+
+export function Profile(props) {
   
   const Profile = styled.div`
     width: auto;
@@ -94,16 +94,18 @@ const userInfo = {
   firstName:  "Nam",
   lastName: "Pratai",
   profileImg: "",
-  bmi: 23.5,
+  weight: 45,
+  height: 160
 }
 
-const [firstName, setFirstName] = useState(userInfo.firstName)
-const [lastName, setLastName] = useState(userInfo.lastName)
-const [profileImg, setProfileImg] = useState(userInfo.profileImg)
-const [bmi, setBmi] = useState(userInfo.bmi)
+const [user, setUser] = useState(userInfo) 
 const { register, handleSubmit, formState: { errors } } = useForm();
 const onSubmit = data => console.log(data);
 console.log(errors);
+
+const bmiCal = (height, weight) => {
+  return Math.round(weight/((height/100)**2))
+}
 
 
   return (
@@ -116,7 +118,7 @@ console.log(errors);
         <NameCard>
           
           <FullName>
-            {firstName} {lastName}
+            {user.firstName} {user.lastName}
           </FullName>
           <UserName></UserName>
           <br />
@@ -130,12 +132,9 @@ console.log(errors);
         <StatCard>
           <Detail>Streak</Detail>
           <Detail>Total Days Exercises</Detail>
-          <Detail>BMI</Detail>
+          <Detail>BMI {bmiCal(user.height, user.weight)}</Detail>
         </StatCard>
       </ProfileContentContainer>
     </Profile>
   );
 }
-
-//todo animate day streak
-//todo animate lasted day

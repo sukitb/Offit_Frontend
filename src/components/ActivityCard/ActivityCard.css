@@ -1,16 +1,19 @@
 .activity-card {
-     width: 250px;
+     width: 240px;
      border: #50a3a2 1px solid;
-     font-family: "Source Sans Pro", sans-serif;
-     padding:15px ;
-     margin: 15px;
-     border-radius: 10px; 
-     display: block; 
+     padding: 15px;
+     margin: 10px;
+     display: flex; 
      align-items: center;
-     box-shadow: 5px 5px 5px rgb(132, 132, 132);
-     gap: 10px 20px;
-     overflow: hidden;
-     height: 500px;
+     justify-content: center;
+     flex-direction: column;
+     border: 1px solid transparent;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px 1px #3f52a045;
+    background-color: #ffff;
+     height: 100%;
+     
+     
 }
 
 .activity-card img {
@@ -24,14 +27,14 @@
 }
 
 .activity-card p {
-    color: #50a3a2;
-    margin: 7px;
+    color: #3f52a0;
+    font-size: 1.5em;
+    margin: 15px;
 }
 
-.activity-card button {
+.activity-card .post-button {
     border-radius: 20px;
     width: 100%;
-    padding: 4px;
     margin: 4px;
     font-weight:bold;
     
@@ -47,14 +50,14 @@
     color: white;
 }
 
-.float-right {
-    float: right;
-    padding-right: 20px;
+.title {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
 }
 
-.float-left {
-    float: left;
-    padding-left: 20px;
+h3 {
+    font-size: 24px;
+    color: #3f52a0;
 }
-
 
