@@ -13,7 +13,6 @@ function ActivityCardList() {
     {
       id: 1,
       img: "",
-      url: "",
       youtubeUrl: "https://www.youtube.com/watch?v=ml6cT4AZdqI",
       title: "yoca",
       durationTime: "3600",
@@ -21,7 +20,6 @@ function ActivityCardList() {
     {
       id: 2,
       img: Meditate,
-      url: "https://www.google.com",
       youtubeUrl: "",
       title: "yoca2",
       durationTime: "300",
@@ -39,16 +37,7 @@ function ActivityCardList() {
   const [activityInfo, setActivityInfo] = useState(activityInfoMock);
 
 
-  function secondsToHms(sec) {
-    sec = Number(sec);
-    const h = Math.floor(sec / 3600);
-    const m = Math.floor((sec % 3600) / 60);
 
-    const hDisplay = h > 0 ? h + (h == 1 ? " hr " : " hr ") : "";
-    const mDisplay = m > 0 ? m + (m == 1 ? " min " : " min ") : "";
-
-    return hDisplay + mDisplay;
-  }
 
   //  function urlCheck(url) {
   //   if (url.includes("youtube.com")) {
@@ -59,10 +48,7 @@ function ActivityCardList() {
   //   }
   // }
 
-  function youtubeParser(url) {
-    url = url.split(/(vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/);
-    return url[2] !== undefined ? url[2].split(/[^0-9a-z_\-]/i)[0] : url[0];
-  }
+  
 
 
   return (
@@ -72,10 +58,9 @@ function ActivityCardList() {
         <ActivityCard
           key={id}
           img={img}
-          url={url}
-          youtubeVideoId={youtubeParser(youtubeUrl)}
+          youtubeUrl={youtubeUrl}
           title={title}
-          durationTime={secondsToHms(durationTime)}
+          durationTime={durationTime}
         />
       ))}
 

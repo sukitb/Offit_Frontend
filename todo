@@ -9,3 +9,10 @@ Soccer
 Travel
 Weight
 Yoga
+
+[] ปรับ value ของเวลาเป็น second
+[] เพิ่ม avatar
+[] เช็ก mock data
+[] ตัดสินใจว่าจะเอา url ไว้มั้ย ถ้าเอาแก้ form และ activity card ให้เช็ก true false
+[] ลองคิดเรื่องดึง default value ใน form
+[] ปรับ padding ใน post

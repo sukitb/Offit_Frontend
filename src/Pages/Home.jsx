@@ -2,23 +2,15 @@ import { Profile } from "../components/Profile/Profile";
 import { useState } from "react";
 import './Home.css'
 import ProfileImgMock from "../assets/ProfileMockingSqaure.jpg"
-import Calendar from "react-calendar";
-import Navbar from "../components/Navbar/Navbar";
 import StatusList from "../components/StatusList/StatusList"
 import styled from "styled-components";
 
 import ActivityCardList from "../components/ActivityCardList/ActivityCardList";
-import NavTabs from "../components/์ฺNavtab/NavTabs";
+
 import BackgroundImg from "../assets/background.svg"
+import BackgroundImg2 from "../assets/background2.svg"
 
 export function Home() {
-    
-    const [day, setSay] = useState(1)
-    const [lastDay, setLastDay] = useState(1)
-    const [profileName, setProfileName] = useState("Nam")
-    const [profileLastName, setProfileLastName] = useState("Prachatai")
-    const [bmi, setBmi] = useState(23.5)
-    const [userName, setUserName] = useState("nam_zaa")
 
     const Main = styled.div`
       margin-top: 20px;
@@ -47,7 +39,7 @@ const Background = styled.div`
     position: absolute;
     z-index: -1;
     max-width: 500px;
-    bottom: 20px;
+    bottom: 50px;
 
     img {
       max-width: 100%;
@@ -68,7 +60,7 @@ const Background = styled.div`
       </Right>
      
       <Background>
-      <img src={BackgroundImg}></img>
+      <img src={BackgroundImg2}></img>
       </Background>
       </Main>
       
