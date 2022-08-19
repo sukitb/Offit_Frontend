@@ -5,7 +5,7 @@ import styled from "@emotion/styled";
 import Box from "@mui/material/Box";
 import Fab from "@mui/material/Fab";
 import { AiOutlinePlus } from "react-icons/ai";
-import AddIcon from "@mui/icons-material/Add";
+
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 
@@ -42,7 +42,7 @@ function EditActivityCardForm() {
       <Box sx={{ "& > :not(style)": { m: 1 } }}>
         <StyledButton
           onClick={handleClickOpen}
-          endIcon={<AddIcon fontSize="large" />}
+          
         >
           ADD
         </StyledButton>
