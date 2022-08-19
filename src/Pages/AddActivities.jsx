@@ -6,7 +6,6 @@ import styled from "@emotion/styled";
 import Box from "@mui/material/Box";
 import Fab from "@mui/material/Fab";
 import { AiOutlinePlus } from "react-icons/ai";
-import AddIcon from "@mui/icons-material/Add";
 import Button from "@mui/material/Button";
 import ActivityCardFormMyway from "../components/ActivityCardForm/ActivityCardFormMyWay";
 import EditActivityCardForm from "../components/ActivityCardForm/EditActivityCardForm";
