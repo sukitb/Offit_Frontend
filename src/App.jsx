@@ -10,12 +10,6 @@ import Box from "@mui/material/Box";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import PropTypes from 'prop-types';
-import Typography from "@mui/material/Typography";
-// todo add AddActivity
-// todo add EditProfile
-
-import ActivityCardList from "./components/ActivityCardList/ActivityCardList";
-import NavTabs from "./components/์ฺNavtab/NavTabs";
 
 // function App() {
 
@@ -78,8 +72,8 @@ export default function App() {
     <div className="App">
       
         <Box sx={{ width: "100%" }}>
-          <Tabs value={value} onChange={handleChange} aria-label="">
-            <Tab label="Overview" {...a11yProps(0)} />
+          <Tabs value={value} onChange={handleChange} aria-label="nav-tab" >
+            <Tab label="Overview"  {...a11yProps(0)}  />
             <Tab label="Activity" />
           </Tabs>
         </Box>
