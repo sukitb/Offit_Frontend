@@ -52,19 +52,22 @@
     align-items: center;
 }
 
-.card .card-body .title  {
+.card .card-body .title div  {
     display: flex;
     align-items: center;
-    margin: 10px 0px;
+    justify-content: center;
+    margin: 10px auto;
 }
 
 .card .card-body .content  {
-    margin: 10px 0px;
+    margin: 10px auto;
+    display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .card .card-body span {
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .card .card-body .title {  

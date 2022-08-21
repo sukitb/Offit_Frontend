@@ -9,6 +9,9 @@ import ActivityCardList from "../components/ActivityCardList/ActivityCardList";
 
 import BackgroundImg from "../assets/background.svg"
 import BackgroundImg2 from "../assets/background2.svg"
+import BackgroundImg4 from "../assets/background4.svg"
+import BackgroundImg5 from "../assets/background5.svg"
+
 
 export function Home() {
 
@@ -36,19 +39,26 @@ export function Home() {
     `
 
 const Background = styled.div`
-    position: absolute;
-    z-index: -1;
-    max-width: 500px;
-    bottom: 50px;
+    
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px 1px #3f52a045;
+    background-color: #ffff;
+    height: 250px;
+    width: 100%;
 
     img {
-      max-width: 100%;
+      height: 100%;
+      width: 50%;
+      object-position: 100% 0%;
+      object-fit: cover;
     }
 `
   
     return (
     <div className="Home">
-      
+      <Background>
+      <img src={BackgroundImg5}></img>
+      </Background>
       
       <Main>
       <Left>
@@ -59,9 +69,7 @@ const Background = styled.div`
       />
       </Right>
      
-      <Background>
-      <img src={BackgroundImg2}></img>
-      </Background>
+      
       </Main>
       
     </div>
