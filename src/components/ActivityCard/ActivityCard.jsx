@@ -8,8 +8,6 @@ import { BsThreeDots } from "react-icons/bs";
 import Grid from "@mui/material/Unstable_Grid2";
 import { BiDotsHorizontalRounded } from "react-icons/bi";
 import Dialog from "@mui/material/Dialog";
-import { useForm } from "react-hook-form";
-import styled from "@emotion/styled";
 import { useState } from "react";
 import ActivityForm from "../ActivityCardForm/ActivityForm";
 

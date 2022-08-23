@@ -94,7 +94,7 @@ export function Profile(props) {
   `;
 
 const userInfo = {
-  firstName:  "User",
+  firstName: "User",
   lastName: "User",
   profileImg: "",
   weight: 45,

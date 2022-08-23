@@ -50,7 +50,7 @@ function ActivityFormButton() {
         <ButtonText>New Activity</ButtonText>
       </StyledButton>
 
-      <Dialog fullWidth="true" open={open} onClose={handleClose}>
+      <Dialog open={open} onClose={handleClose}>
       <ActivityForm />
       </Dialog>
     </div>

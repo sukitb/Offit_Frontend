@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment, useState } from "react";
 import { useForm } from "react-hook-form";
 import styled from "@emotion/styled";
 import { ActivityIcons } from "../Utils/ActivitiyIcons";
@@ -6,6 +6,8 @@ import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import { SiYoutube } from "react-icons/si";
+import axios from "axios";
+import { useMutation } from "@tanstack/react-query";
 
 function ActivityForm() {
   const {
@@ -13,7 +15,14 @@ function ActivityForm() {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+
+  const onSubmit = async (data) => {
+    console.log(data);
+    data.duration = data.duration * 60;
+    const today = new Date();
+    data.createActivityAt = today.toLocaleDateString();
+    await axios.post("http://localhost:8080/activities", data);
+  };
   console.log(errors);
 
   const formSubmit = () => {
@@ -86,14 +95,14 @@ function ActivityForm() {
     justify-content: center;
 
     input {
-        font-size: 22px;
-        font-weight: 600;
-        padding: 10px;
-        width: 50%;
-        border: 2px solid #60ba71;
-        background-color: #60ba71;
-        color: white;
-        font-family: inherit;
+      font-size: 22px;
+      font-weight: 600;
+      padding: 10px;
+      width: 50%;
+      border: 2px solid #3f52a0;
+      background-color: #3f52a0;
+      color: white;
+      font-family: inherit;
     }
   `;
 
@@ -110,7 +119,7 @@ function ActivityForm() {
             type="text"
             className="form"
             placeholder="What's your today workout?"
-            {...register("Activity", { required: true, maxLength: 40 })}
+            {...register("title", { required: true, maxLength: 40 })}
           />
         </FormInput>
 
@@ -121,9 +130,9 @@ function ActivityForm() {
             </AccordionSummary>
             <AccordionDetails>
               <div className="img-radio">
-                {ActivityIcons.map((icon) => (
+                {ActivityIcons.map((icon, index) => (
                   <label>
-                    <input {...register("img")} type="radio" value={icon} />
+                    <input {...register("image")} type="radio" value={index} />
                     <img key={icon} src={icon} alt="" />
                   </label>
                 ))}
@@ -133,7 +142,7 @@ function ActivityForm() {
         </FormInput>
 
         <FormInput>
-          <label className="label" htmlFor="hours">
+          {/* <label className="label" htmlFor="hours">
             ⏱ Hours:
           </label>
           <input
@@ -141,9 +150,9 @@ function ActivityForm() {
             type="number"
             placeholder="Hours"
             className="form"
-            defaultValue={""}
+            defaultValue={0}
             {...register("Hours", { required: true, max: 23, min: 0 })}
-          />
+          /> */}
 
           <label className="label" htmlFor="minutes">
             Minutes:
@@ -153,7 +162,7 @@ function ActivityForm() {
             type="number"
             className="form"
             placeholder="Minutes"
-            {...register("Minutes", { required: true, max: 59, min: 0 })}
+            {...register("duration", { required: true, max: 59, min: 0 })}
           />
         </FormInput>
         <FormInput>
@@ -166,11 +175,11 @@ function ActivityForm() {
             className="form"
             placeholder="Paste your ref. URL here"
             defaultValue={""}
-            {...register("urlActivity", {})}
+            {...register("youtubeURL", {})}
           />
         </FormInput>
         <SubmitInput>
-        <input onClick={formSubmit} type="submit" value="CREATE" />
+          <input onClick={formSubmit} type="submit" value="CREATE" />
         </SubmitInput>
       </FormContainer>
     </form>
