@@ -52,33 +52,38 @@
     align-items: center;
 }
 
-.card .card-body .title  {
+.card .card-body .title div  {
     display: flex;
     align-items: center;
-    margin: 10px 0px;
+    justify-content: center;
+    margin: 10px auto;
 }
 
 .card .card-body .content  {
-    margin: 10px 0px;
+    margin: 10px auto;
+    display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .card .card-body span {
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .card .card-body .title {  
      font-size: 20px;
 }
 
+.card .card-body .title h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #3f52a0;
+}
+
 .card .card-body svg {
     min-width: 26px;
     width: 26px;
     height: 26px;
-    padding: 0px 16px;
-}
-
-span {
     padding: 0px 16px;
 }
 

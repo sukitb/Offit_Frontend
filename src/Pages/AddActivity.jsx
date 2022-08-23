@@ -7,30 +7,43 @@ import Box from "@mui/material/Box";
 import Fab from "@mui/material/Fab";
 import { AiOutlinePlus } from "react-icons/ai";
 import Button from "@mui/material/Button";
-import ActivityCardFormMyway from "../components/ActivityCardForm/ActivityCardFormMyWay";
-import EditActivityCardForm from "../components/ActivityCardForm/EditActivityCardForm";
+
+import EditActivityCardForm from "../components/ActivityCardForm/EditActivityForm";
+import BackgroundImg3 from "../assets/background3.svg";
+import ActivityForm from "../components/ActivityCardForm/ActivityForm";
+import ActivityFormButton from "../components/ActivityCardForm/ActivityFormButton";
 
 export default function AddActivities() {
-  const Main = styled.div`
-    
-  `;
+  const Main = styled.div``;
 
   const Top = styled.div`
     display: flex;
     padding: 10px;
-  `
+  `;
+
+  const Background = styled.div`
+    position: absolute;
+    z-index: -1;
+    max-width: 500px;
+    bottom: 50px;
+
+    img {
+      max-width: 100%;
+    }
+  `;
 
   return (
     <div className="AddActivities">
       <Top>
-      <ActivityCardFormMyway />
-
+        <ActivityFormButton />
       </Top>
       <Main>
         {/* <EditActivityCardForm /> */}
-          <ActivityCardList />
-        
+        <ActivityCardList />
       </Main>
+      <Background>
+        <img src={BackgroundImg3}></img>
+      </Background>
     </div>
   );
 }

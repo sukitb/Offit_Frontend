@@ -4,12 +4,15 @@ import "./App.css";
 
 // pages
 import { Home } from "./Pages/Home";
-import AddActivities from "./Pages/AddActivities";
+import AddActivity from "./Pages/AddActivity";
 
 import Box from "@mui/material/Box";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import PropTypes from 'prop-types';
+
+import { AiOutlineHome } from "react-icons/ai";
+import { AiOutlinePlus } from "react-icons/ai"
 
 // function App() {
 
@@ -19,8 +22,7 @@ import PropTypes from 'prop-types';
 //       <BrowserRouter>
 //         <Routes>
 //           <Route path="/" element={<Home />} />
-//           {/* <Route path="/addactivity" element={<AddActivity />} /> */}
-//           <Route path="/add-activities" element={<AddActivities />} />
+//           <Route path="/add-activity" element={<AddActivity />} />
 //         </Routes>
 //       </BrowserRouter>
 //     </div>
@@ -73,15 +75,15 @@ export default function App() {
       
         <Box sx={{ width: "100%" }}>
           <Tabs value={value} onChange={handleChange} aria-label="nav-tab" >
-            <Tab label="Overview"  {...a11yProps(0)}  />
-            <Tab label="Activity" />
+            <Tab label="Home" icon={<AiOutlineHome/>} iconPosition="start" {...a11yProps(0)}  />
+            <Tab label="Activity" icon={<AiOutlinePlus/>} iconPosition="start" {...a11yProps(0)}  />
           </Tabs>
         </Box>
         <TabPanel value={value} index={0}>
         <Home />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <AddActivities />
+        <AddActivity />
       </TabPanel>
 
     </div>

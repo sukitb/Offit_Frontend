@@ -17,11 +17,11 @@ function StatusCard(props) {
         <div className="card-body">
           <div className="title">
             <div>
-              <TickIcon />
+              
               <h3> {props.activity} </h3>
             </div>
             <div>
-              <StopWatch /> <h3> {props.durationTime} </h3>
+               <h3> {props.durationTime} </h3>
             </div>
           </div>
           <div className="content">
@@ -29,7 +29,7 @@ function StatusCard(props) {
             <span className="text">{props.textPost} </span>
           </div>
           <div className="content">
-            <CalendarIcon />
+            
             <span className="date">{props.datePost}</span>
           </div>
         </div>

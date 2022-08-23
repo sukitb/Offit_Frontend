@@ -2,23 +2,18 @@ import { Profile } from "../components/Profile/Profile";
 import { useState } from "react";
 import './Home.css'
 import ProfileImgMock from "../assets/ProfileMockingSqaure.jpg"
-import Calendar from "react-calendar";
-import Navbar from "../components/Navbar/Navbar";
 import StatusList from "../components/StatusList/StatusList"
 import styled from "styled-components";
 
 import ActivityCardList from "../components/ActivityCardList/ActivityCardList";
-import NavTabs from "../components/์ฺNavtab/NavTabs";
+
 import BackgroundImg from "../assets/background.svg"
+import BackgroundImg2 from "../assets/background2.svg"
+import BackgroundImg4 from "../assets/background4.svg"
+import BackgroundImg5 from "../assets/background5.svg"
+
 
 export function Home() {
-    
-    const [day, setSay] = useState(1)
-    const [lastDay, setLastDay] = useState(1)
-    const [profileName, setProfileName] = useState("Nam")
-    const [profileLastName, setProfileLastName] = useState("Prachatai")
-    const [bmi, setBmi] = useState(23.5)
-    const [userName, setUserName] = useState("nam_zaa")
 
     const Main = styled.div`
       margin-top: 20px;
@@ -44,19 +39,26 @@ export function Home() {
     `
 
 const Background = styled.div`
-    position: absolute;
-    z-index: -1;
-    max-width: 500px;
-    bottom: 20px;
+    
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px 1px #3f52a045;
+    background-color: #ffff;
+    height: 250px;
+    width: 100%;
 
     img {
-      max-width: 100%;
+      height: 100%;
+      width: 50%;
+      object-position: 100% 0%;
+      object-fit: cover;
     }
 `
   
     return (
     <div className="Home">
-      
+      <Background>
+      <img src={BackgroundImg5}></img>
+      </Background>
       
       <Main>
       <Left>
@@ -67,9 +69,7 @@ const Background = styled.div`
       />
       </Right>
      
-      <Background>
-      <img src={BackgroundImg}></img>
-      </Background>
+      
       </Main>
       
     </div>
