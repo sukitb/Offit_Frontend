@@ -14,6 +14,7 @@ import EditActivityForm from "../ActivityCardForm/EditActivityForm";
 import axios from "axios";
 import { ActivityIcons } from "../Utils/ActivitiyIcons";
 import { instance } from '../../api.js'
+import NavigateButton from '../Utils/Button'
 
 function ActivityCard(props) {
 
@@ -119,8 +120,8 @@ function ActivityCard(props) {
           />
         </Dialog>
         <Dialog open={openDelete} onClose={handleClickCloseDelete}>
-          <button>Cancel</button>
-          <button onClick={handleDelete}>Delete</button>
+          <NavigateButton onClick={handleDelete} text={"Delete"}/>
+          
         </Dialog>
       </Grid>
 
