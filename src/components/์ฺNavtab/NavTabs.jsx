@@ -29,9 +29,9 @@ export default function NavTabs() {
     <NavTab>
         <a href="/">🥇 overview</a>
         <a href="/activities">🏃🏼‍♀️ activity</a>
-        <a onClick={logOut}>🚪 logout</a> 
+        <a onClick={logOut}><button>🚪 logout</button></a> 
         </NavTab>
              
-        </div>   
+        </div>
   );
 }

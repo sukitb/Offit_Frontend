@@ -128,7 +128,13 @@ function ActivityForm(props) {
             type="text"
             className="form"
             placeholder="What's your today workout?"
-            {...register("title", { required: true, maxLength: 40 })}
+            {...register("title", {
+              required: " ⚠️This input is required.",
+              maxLength: {
+                value: 15,
+                message: "⚠️ This input not exceed than 15 characters"}
+              }
+            )}
           />
         </FormInput>
 
@@ -154,7 +160,7 @@ function ActivityForm(props) {
               <div className="img-radio">
                 {ActivityIcons.map((icon, index) => (
                   <label>
-                    <input {...register("image")} type="radio" value={index} />
+                    <input {...register("image",{required: " ⚠️This input is required."} )} type="radio" value={index} />
                     <img key={icon} src={icon} alt="" />
                   </label>
                 ))}
@@ -189,19 +195,6 @@ function ActivityForm(props) {
             {...register("hours", { required: true, max: 23, min: 0 })}
           />
 
-<ErrorMessage
-        errors={errors}
-        name="hours"
-        render={({ messages }) => {
-          console.log("messages", messages);
-          return messages
-            ? Object.entries(messages).map(([type, message]) => (
-                <p key={type}>{message}</p>
-              ))
-            : null;
-        }}
-      />
-
           <label className="label" htmlFor="minutes">
             Minutes:
           </label>
@@ -210,7 +203,7 @@ function ActivityForm(props) {
             type="number"
             className="form"
             placeholder="Minutes"
-            {...register("minutes", { required: true, max: 59, min: 0 })}
+            {...register("minutes", {required: " ⚠️This input is required."} )}
           />
           <ErrorMessage
         errors={errors}

@@ -139,8 +139,26 @@ function EditActivityForm(props) {
             className="form"
             placeholder="What's your today workout?"
             
-            {...register("title", { required: true, maxLength: 40 })}
+            {...register("title", {
+              required: " ⚠️This input is required.",
+              maxLength: {
+                value: 15,
+                message: "⚠️ This input not exceed than 15 characters"}
+              }
+            )}
           />
+          <ErrorMessage
+        errors={errors}
+        name="minutes"
+        render={({ messages }) => {
+          console.log("messages", messages);
+          return messages
+            ? Object.entries(messages).map(([type, message]) => (
+                <p key={type}>{message}</p>
+              ))
+            : null;
+        }}
+      />
         </div>
         <div className="imgchoose">
           <Accordion>
@@ -152,7 +170,7 @@ function EditActivityForm(props) {
                 {ActivityIcons.map((icon, index) => (
                   <label>
                     <input
-                      {...register("image")}
+                      {...register("image", {required: " ⚠️This input is required."})}
                       type="radio"
                       value={index}
                     />
@@ -163,6 +181,18 @@ function EditActivityForm(props) {
             </AccordionDetails>
           </Accordion>
         </div>
+        <ErrorMessage
+        errors={errors}
+        name="minutes"
+        render={({ messages }) => {
+          console.log("messages", messages);
+          return messages
+            ? Object.entries(messages).map(([type, message]) => (
+                <p key={type}>{message}</p>
+              ))
+            : null;
+        }}
+      />
 
         <div className="url">
           <label className="label" htmlFor="link">
@@ -200,8 +230,20 @@ function EditActivityForm(props) {
               type="number"
               className="form"
               placeholder="Minutes"
-              {...register("minutes", { required: true, max: 59, min: 0 })}
+              {...register("minutes", {required: " ⚠️This input is required."})}
             />
+            <ErrorMessage
+        errors={errors}
+        name="minutes"
+        render={({ messages }) => {
+          console.log("messages", messages);
+          return messages
+            ? Object.entries(messages).map(([type, message]) => (
+                <p key={type}>{message}</p>
+              ))
+            : null;
+        }}
+      />
           </div>
         </div>
         <div className="submit">
