@@ -29,7 +29,7 @@ export default function NavTabs() {
     <NavTab>
         <a href="/">🥇 overview</a>
         <a href="/activities">🏃🏼‍♀️ activity</a>
-        <a onClick={logOut} href="">🚪 logout</a> 
+        <a onClick={logOut}>🚪 logout</a> 
         </NavTab>
              
         </div>   
