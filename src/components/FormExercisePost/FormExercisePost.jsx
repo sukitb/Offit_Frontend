@@ -3,21 +3,30 @@ import "./FormExercisePost.css";
 import { useForm } from "react-hook-form";
 import styled from "@emotion/styled";
 import Button from "@mui/material/Button";
+import axios from "axios";
+import { instance } from "../../api";
+
 
 function CreatePost(props) {
   const {
     register,
     handleSubmit,
-    formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
-  console.log(errors);
+
+  const onSubmit = async (data) => {
+    const today = new Date();
+    data.createPostAt = today.toLocaleDateString('en-GB', {
+      month: '2-digit',day: '2-digit',year: 'numeric'});
+    await instance.post(`me/activities/${props.id}/post`, data)
+    props.fetchActivities()
+  }
+  
 
   const ButtonContainer = styled.div`
     display: flex;
   `
 
-const StyledButton = styled(Button)({
+  const StyledButton = styled(Button)({
   margin: "12px",
   boxShadow: "none",
   textTransform: "none",
@@ -60,7 +69,7 @@ const StyledButton = styled(Button)({
     <div className="form-post">
       <div className="post-form-middle">
         <form onSubmit={handleSubmit(onSubmit)}>
-          <textarea {...register("Post", { required: true, maxLength: 80 })} cols="20" rows="5" placeholder="What's on your mind ?" />
+          <textarea {...register("postContent", { required: true, maxLength: 80 })} cols="20" rows="5" placeholder="What's on your mind ?" />
           <ButtonContainer>
             
             

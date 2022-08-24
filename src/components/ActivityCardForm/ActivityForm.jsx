@@ -5,25 +5,31 @@ import { ActivityIcons } from "../Utils/ActivitiyIcons";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
-import { SiYoutube } from "react-icons/si";
 import axios from "axios";
-import { useMutation } from "@tanstack/react-query";
+import { instance } from "../../api";
 
-function ActivityForm() {
+
+function ActivityForm(props) {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    
   } = useForm();
 
   const onSubmit = async (data) => {
     console.log(data);
     data.duration = data.duration * 60;
     const today = new Date();
-    data.createActivityAt = today.toLocaleDateString();
-    await axios.post("http://localhost:8080/activities", data);
+    const hourToSec = data.hours * 3600;
+    const minutesToSec = data.minutes * 60;
+    data.duration = hourToSec + minutesToSec;
+    data.createActivityAt = today.toLocaleDateString('en-GB', {
+      month: '2-digit',day: '2-digit',year: 'numeric'});
+    
+    await instance.post("me/activities", data);
+    props.fetchActivities()
   };
-  console.log(errors);
+  
 
   const formSubmit = () => {
     alert("Activity saved");
@@ -142,7 +148,7 @@ function ActivityForm() {
         </FormInput>
 
         <FormInput>
-          {/* <label className="label" htmlFor="hours">
+          <label className="label" htmlFor="hours">
             ⏱ Hours:
           </label>
           <input
@@ -151,8 +157,8 @@ function ActivityForm() {
             placeholder="Hours"
             className="form"
             defaultValue={0}
-            {...register("Hours", { required: true, max: 23, min: 0 })}
-          /> */}
+            {...register("hours", { required: true, max: 23, min: 0 })}
+          />
 
           <label className="label" htmlFor="minutes">
             Minutes:
@@ -162,7 +168,7 @@ function ActivityForm() {
             type="number"
             className="form"
             placeholder="Minutes"
-            {...register("duration", { required: true, max: 59, min: 0 })}
+            {...register("minutes", { required: true, max: 59, min: 0 })}
           />
         </FormInput>
         <FormInput>
@@ -171,11 +177,10 @@ function ActivityForm() {
           </label>
           <input
             id="link"
-            type="url"
+            type="text"
             className="form"
             placeholder="Paste your ref. URL here"
-            defaultValue={""}
-            {...register("youtubeURL", {})}
+            {...register("youtubeUrl", {})}
           />
         </FormInput>
         <SubmitInput>

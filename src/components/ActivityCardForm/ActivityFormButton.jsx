@@ -5,7 +5,7 @@ import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import ActivityForm from "./ActivityForm"
 
-function ActivityFormButton() {
+function ActivityFormButton(props) {
 
   const [open, setOpen] = React.useState(false);
 
@@ -51,7 +51,9 @@ function ActivityFormButton() {
       </StyledButton>
 
       <Dialog open={open} onClose={handleClose}>
-      <ActivityForm />
+      <ActivityForm
+      fetchActivities={props.fetchActivities}
+      />
       </Dialog>
     </div>
   );
