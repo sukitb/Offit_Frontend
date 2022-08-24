@@ -17,8 +17,7 @@ function ActivityForm() {
   //   formState: { errors },
   // } = useForm();
 
-  // const onSubmit = async (data) => {
-  //   console.log(data);
+ 
 
   const {
     register,
@@ -27,14 +26,15 @@ function ActivityForm() {
   } = useForm({
     criteriaMode: "all"
   });
-  const onSubmit = (data) => console.log(data);
-
   
-  //   data.duration = data.duration * 60;
-  //   const today = new Date();
-  //   data.createActivityAt = today.toLocaleDateString();
-  //   await axios.post("http://localhost:8080/activities", data);
-  // };
+
+  const onSubmit = async (data) => {
+    console.log(data);
+    data.duration = data.duration * 60;
+    const today = new Date();
+    data.createActivityAt = today.toLocaleDateString();
+    await axios.post("http://localhost:8080/activities", data);
+  };
   console.log(errors);
 
   const formSubmit = () => {
