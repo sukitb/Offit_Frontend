@@ -8,21 +8,33 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import { SiYoutube } from "react-icons/si";
 import axios from "axios";
 import { useMutation } from "@tanstack/react-query";
+import { ErrorMessage } from '@hookform/error-message';
 
 function ActivityForm() {
+  // const {
+  //   register,
+  //   handleSubmit,
+  //   formState: { errors },
+  // } = useForm();
+
+  // const onSubmit = async (data) => {
+  //   console.log(data);
+
   const {
     register,
-    handleSubmit,
     formState: { errors },
-  } = useForm();
+    handleSubmit
+  } = useForm({
+    criteriaMode: "all"
+  });
+  const onSubmit = (data) => console.log(data);
 
-  const onSubmit = async (data) => {
-    console.log(data);
-    data.duration = data.duration * 60;
-    const today = new Date();
-    data.createActivityAt = today.toLocaleDateString();
-    await axios.post("http://localhost:8080/activities", data);
-  };
+  
+  //   data.duration = data.duration * 60;
+  //   const today = new Date();
+  //   data.createActivityAt = today.toLocaleDateString();
+  //   await axios.post("http://localhost:8080/activities", data);
+  // };
   console.log(errors);
 
   const formSubmit = () => {
@@ -109,7 +121,7 @@ function ActivityForm() {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="form-activity">
       <FormContainer>
-        <h2>New Activity</h2>
+        <h2>New Activity55555555</h2>
         <FormInput>
           <label className="label" htmlFor="activity">
             👟 Activity
@@ -119,9 +131,30 @@ function ActivityForm() {
             type="text"
             className="form"
             placeholder="What's your today workout?"
-            {...register("title", { required: true, maxLength: 40 })}
+            {...register("title", {
+              required: " ⚠️This input is required.",
+              maxLength: {
+                value: 40,
+                message: "⚠️ This input not exceed than 40 characters"
+              }
+            }  /*{ required: true, maxLength: 40 }*/)}
           />
         </FormInput>
+        
+      
+        <ErrorMessage
+          errors={errors}
+          name="title"
+          render={({ messages }) => {
+            console.log("messages", messages);
+            return messages
+              ? Object.entries(messages).map(([type, message]) => (
+                  <p key={type}>{message}</p>
+                ))
+              : null;
+          }}
+        />
+
 
         <FormInput>
           <Accordion>
@@ -132,7 +165,7 @@ function ActivityForm() {
               <div className="img-radio">
                 {ActivityIcons.map((icon, index) => (
                   <label>
-                    <input {...register("image")} type="radio" value={index} />
+                    <input {...register("image",{required: " ⚠️This input is required."} )} type="radio" value={index} />
                     <img key={icon} src={icon} alt="" />
                   </label>
                 ))}
@@ -140,6 +173,20 @@ function ActivityForm() {
             </AccordionDetails>
           </Accordion>
         </FormInput>
+
+        <ErrorMessage
+        errors={errors}
+        name="image"
+        render={({ messages }) => {
+          console.log("messages", messages);
+          return messages
+            ? Object.entries(messages).map(([type, message]) => (
+                <p key={type}>{message}</p>
+              ))
+            : null;
+        }}
+        />
+
 
         <FormInput>
           {/* <label className="label" htmlFor="hours">
@@ -162,9 +209,33 @@ function ActivityForm() {
             type="number"
             className="form"
             placeholder="Minutes"
-            {...register("duration", { required: true, max: 59, min: 0 })}
+            {...register("duration",{
+              required: "⚠️ This input is required.",
+              pattern: {
+                value: /\d+/,
+                message: "⚠️ This input is number only."
+            },
+              max: {
+                value: 500,
+                message: "⚠️ Minutes not over than 600"
+            }} /*{ required: true, max: 59, min: 0 }*/)}
           />
         </FormInput>
+
+
+        <ErrorMessage
+        errors={errors}
+        name="duration"
+        render={({ messages }) => {
+          console.log("messages", messages);
+          return messages
+            ? Object.entries(messages).map(([type, message]) => (
+                <p key={type}>{message}</p>
+              ))
+            : null;
+        }}
+      />
+
         <FormInput>
           <label className="label" htmlFor="link">
             Youtube URL (Optional)
