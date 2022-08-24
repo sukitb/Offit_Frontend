@@ -5,29 +5,38 @@ import { ActivityIcons } from "../Utils/ActivitiyIcons";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
-import { SiYoutube } from "react-icons/si";
 import axios from "axios";
-import { useMutation } from "@tanstack/react-query";
+import { instance } from "../../api";
+import { ErrorMessage } from '@hookform/error-message';
 
-function ActivityForm() {
+
+
+function ActivityForm(props) {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    criteriaMode: "all"
+  });
 
   const onSubmit = async (data) => {
     console.log(data);
     data.duration = data.duration * 60;
     const today = new Date();
-    data.createActivityAt = today.toLocaleDateString();
-    await axios.post("http://localhost:8080/activities", data);
+    const hourToSec = data.hours * 3600;
+    const minutesToSec = data.minutes * 60;
+    data.duration = hourToSec + minutesToSec;
+    data.createActivityAt = today.toLocaleDateString('en-GB', {
+      month: '2-digit',day: '2-digit',year: 'numeric'});
+    
+    await instance.post("me/activities", data);
+    props.fetchActivities()
   };
-  console.log(errors);
+  
 
   const formSubmit = () => {
     alert("Activity saved");
-    handleClose();
   };
 
   const FormContainer = styled.div`
@@ -123,6 +132,19 @@ function ActivityForm() {
           />
         </FormInput>
 
+        <ErrorMessage
+          errors={errors}
+          name="title"
+          render={({ messages }) => {
+            console.log("messages", messages);
+            return messages
+              ? Object.entries(messages).map(([type, message]) => (
+                  <p key={type}>{message}</p>
+                ))
+              : null;
+          }}
+        />
+
         <FormInput>
           <Accordion>
             <AccordionSummary className="form" aria-controls="panel1a-content">
@@ -141,8 +163,21 @@ function ActivityForm() {
           </Accordion>
         </FormInput>
 
+        <ErrorMessage
+        errors={errors}
+        name="image"
+        render={({ messages }) => {
+          console.log("messages", messages);
+          return messages
+            ? Object.entries(messages).map(([type, message]) => (
+                <p key={type}>{message}</p>
+              ))
+            : null;
+        }}
+        />
+
         <FormInput>
-          {/* <label className="label" htmlFor="hours">
+          <label className="label" htmlFor="hours">
             ⏱ Hours:
           </label>
           <input
@@ -151,8 +186,21 @@ function ActivityForm() {
             placeholder="Hours"
             className="form"
             defaultValue={0}
-            {...register("Hours", { required: true, max: 23, min: 0 })}
-          /> */}
+            {...register("hours", { required: true, max: 23, min: 0 })}
+          />
+
+<ErrorMessage
+        errors={errors}
+        name="hours"
+        render={({ messages }) => {
+          console.log("messages", messages);
+          return messages
+            ? Object.entries(messages).map(([type, message]) => (
+                <p key={type}>{message}</p>
+              ))
+            : null;
+        }}
+      />
 
           <label className="label" htmlFor="minutes">
             Minutes:
@@ -162,8 +210,20 @@ function ActivityForm() {
             type="number"
             className="form"
             placeholder="Minutes"
-            {...register("duration", { required: true, max: 59, min: 0 })}
+            {...register("minutes", { required: true, max: 59, min: 0 })}
           />
+          <ErrorMessage
+        errors={errors}
+        name="minutes"
+        render={({ messages }) => {
+          console.log("messages", messages);
+          return messages
+            ? Object.entries(messages).map(([type, message]) => (
+                <p key={type}>{message}</p>
+              ))
+            : null;
+        }}
+      />
         </FormInput>
         <FormInput>
           <label className="label" htmlFor="link">
@@ -171,15 +231,14 @@ function ActivityForm() {
           </label>
           <input
             id="link"
-            type="url"
+            type="text"
             className="form"
             placeholder="Paste your ref. URL here"
-            defaultValue={""}
-            {...register("youtubeURL", {})}
+            {...register("youtubeUrl", {})}
           />
         </FormInput>
         <SubmitInput>
-          <input onClick={formSubmit} type="submit" value="CREATE" />
+          <input onClick={onSubmit} type="submit" value="CREATE" />
         </SubmitInput>
       </FormContainer>
     </form>

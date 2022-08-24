@@ -1,17 +1,11 @@
 import { Profile } from "../components/Profile/Profile";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import './Home.css'
-import ProfileImgMock from "../assets/ProfileMockingSqaure.jpg"
 import StatusList from "../components/StatusList/StatusList"
 import styled from "styled-components";
-
-import ActivityCardList from "../components/ActivityCardList/ActivityCardList";
-
-import BackgroundImg from "../assets/background.svg"
-import BackgroundImg2 from "../assets/background2.svg"
-import BackgroundImg4 from "../assets/background4.svg"
 import BackgroundImg5 from "../assets/background5.svg"
-
+import { instance } from "../api";
+import { useNavigate } from 'react-router-dom'
 
 export function Home() {
 
@@ -38,7 +32,7 @@ export function Home() {
       grid-column: 2/5;
     `
 
-const Background = styled.div`
+    const Background = styled.div`
     
     border-radius: 10px;
     box-shadow: 1px 1px 10px 1px #3f52a045;
@@ -53,7 +47,31 @@ const Background = styled.div`
       object-fit: cover;
     }
 `
-  
+    const [activityInfo, setActivityInfo] = useState([])
+    const [userInfo, setUserInfo] = useState([])
+    const navigate = useNavigate()
+
+    const fetchUserInfo = async () => {
+      const { data, status } = await instance.get('me/profile')
+      if (status == 401) {
+        navigate('/login')
+      }
+      setUserInfo(data)
+      return(data)
+    }
+
+    const fetchActivityInfoWithPost = async () => {
+      const { data } = await instance.get('me/activities/post')
+      setActivityInfo(data)
+      return data;
+    }
+
+    useEffect(()=> {
+      fetchActivityInfoWithPost()
+      fetchUserInfo()
+    }, [])
+    
+
     return (
     <div className="Home">
       <Background>
@@ -62,11 +80,13 @@ const Background = styled.div`
       
       <Main>
       <Left>
-      <Profile />
+      <Profile
+      userInfo={userInfo}
+       />
       </Left>
       <Right>
       <StatusList
-      />
+      activityInfo={activityInfo}/>
       </Right>
      
       

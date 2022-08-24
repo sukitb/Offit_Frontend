@@ -20,7 +20,7 @@ textarea {
     font-size: 29px;
 }
 
-.post-form-middle {
+-form-middle {
     display: flex;
     flex-flow: column;
     gap: 10px;

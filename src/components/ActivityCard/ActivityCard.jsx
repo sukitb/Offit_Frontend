@@ -10,12 +10,12 @@ import { BiDotsHorizontalRounded } from "react-icons/bi";
 import Dialog from "@mui/material/Dialog";
 import { useState } from "react";
 import ActivityForm from "../ActivityCardForm/ActivityForm";
+import EditActivityForm from "../ActivityCardForm/EditActivityForm";
+import axios from "axios";
+import { ActivityIcons } from "../Utils/ActivitiyIcons";
+import { instance } from '../../api.js'
 
 function ActivityCard(props) {
-
-  function handleEdit() {
-    alert("click");
-  }
 
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
@@ -27,10 +27,18 @@ function ActivityCard(props) {
   };
 
   const [openEdit, setOpenEdit] = useState(false);
+  const [openDelete, setOpenDelete] = useState(false);
 
-  function handleClickOpenThenClose() {
+  function handleClickOpenThenCloseForm() {
     //open form
     setOpenEdit(true);
+    //close menu
+    handleClose();
+  }
+
+  function handleClickOpenThenCloseDelete() {
+    //open form
+    setOpenDelete(true);
     //close menu
     handleClose();
   }
@@ -38,6 +46,15 @@ function ActivityCard(props) {
   //forclose form
   const handleClickClose = () => {
     setOpenEdit(false);
+  };
+
+  const handleClickCloseDelete = () => {
+    setOpenDelete(false)
+  }
+
+  const handleDelete = async () => {
+    await instance.delete(`me/activities/${props.id}/delete`);
+    props.fetchActivities()
   };
 
   //change url to youtube video id
@@ -57,6 +74,8 @@ function ActivityCard(props) {
 
     return hDisplay + mDisplay;
   }
+
+
 
   return (
     <div className="activity-card">
@@ -86,27 +105,28 @@ function ActivityCard(props) {
             },
           }}
         >
-          <MenuItem onClick={handleClickOpenThenClose}>Edit</MenuItem>
-          <MenuItem onClick={handleClose}>Delete</MenuItem>
+          <MenuItem onClick={handleClickOpenThenCloseForm}>Edit</MenuItem>
+          <MenuItem onClick={handleClickOpenThenCloseDelete}>Delete</MenuItem>
         </Menu>
         <Dialog open={openEdit} onClose={handleClickClose}>
-          <ActivityForm
+          <EditActivityForm
             id={props.id}
-            img={props.img}
+            img={ActivityIcons[props.img]}
             youtubeVideoId={props.youtubeVideoId}
             title={props.title}
             durationTime={secondsToHms(props.durationTime)}
+            fetchActivities={props.fetchActivities}
           />
+        </Dialog>
+        <Dialog open={openDelete} onClose={handleClickCloseDelete}>
+          <button>Cancel</button>
+          <button onClick={handleDelete}>Delete</button>
         </Dialog>
       </Grid>
 
-      {props.url & props.img ? (
-        <a href={props.url} target="_blank">
-          <img src={props.img} />
-        </a>
-      ) : (
-        <img src={props.img} />
-      )}
+      
+        <img src={ActivityIcons[props.img]} />
+      
 
       {props.youtubeUrl && (
         <iframe
@@ -124,7 +144,10 @@ function ActivityCard(props) {
         <h3>{secondsToHms(props.durationTime)}</h3>
       </div>
 
-      <CreateForm />
+      <CreateForm
+      id={props.id}
+      fetchActivities={props.fetchActivities}
+      />
     </div>
   );
 }

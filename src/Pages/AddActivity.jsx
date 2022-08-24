@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import ActivityCardList from "../components/ActivityCardList/ActivityCardList";
 import "./AddActivities.css";
 import CreatePost from "../components/FormExercisePost/FormExercisePost";
@@ -12,6 +12,9 @@ import EditActivityCardForm from "../components/ActivityCardForm/EditActivityFor
 import BackgroundImg3 from "../assets/background3.svg";
 import ActivityForm from "../components/ActivityCardForm/ActivityForm";
 import ActivityFormButton from "../components/ActivityCardForm/ActivityFormButton";
+import axios from "axios";
+import { instance } from "../api";
+
 
 export default function AddActivities() {
   const Main = styled.div``;
@@ -32,14 +35,35 @@ export default function AddActivities() {
     }
   `;
 
+  const [activityInfo, setActivityInfo] = useState([]);
+  const [userInfo, setUserInfo] = useState([]);
+
+  const fetchActivities = async () => {
+    const { data } = await instance.get("me/activities");
+    console.log(data);
+    setActivityInfo(data)
+    return data;
+  };
+
+  
+
+  useEffect(() => {
+    fetchActivities()
+  }, [])
+
   return (
     <div className="AddActivities">
       <Top>
-        <ActivityFormButton />
+        <ActivityFormButton
+        fetchActivities={fetchActivities} />
       </Top>
       <Main>
         {/* <EditActivityCardForm /> */}
-        <ActivityCardList />
+        <ActivityCardList
+        activityInfo={activityInfo}
+        fetchActivities={fetchActivities}
+        userInfo={userInfo}
+        />
       </Main>
       <Background>
         <img src={BackgroundImg3}></img>
