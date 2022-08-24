@@ -1,18 +1,11 @@
 import { Profile } from "../components/Profile/Profile";
 import { useEffect, useState } from "react";
 import './Home.css'
-import ProfileImgMock from "../assets/ProfileMockingSqaure.jpg"
 import StatusList from "../components/StatusList/StatusList"
 import styled from "styled-components";
-
-import ActivityCardList from "../components/ActivityCardList/ActivityCardList";
-
-import BackgroundImg from "../assets/background.svg"
-import BackgroundImg2 from "../assets/background2.svg"
-import BackgroundImg4 from "../assets/background4.svg"
 import BackgroundImg5 from "../assets/background5.svg"
-import axios from "axios";
 import { instance } from "../api";
+import { useNavigate } from 'react-router-dom'
 
 export function Home() {
 
@@ -55,19 +48,27 @@ export function Home() {
     }
 `
     const [activityInfo, setActivityInfo] = useState([])
-    const [postInfo, setPostInfo] = useState([])
+    const [userInfo, setUserInfo] = useState([])
+    const navigate = useNavigate()
+
+    const fetchUserInfo = async () => {
+      const { data, status } = await instance.get('me/profile')
+      if (status == 401) {
+        navigate('/login')
+      }
+      setUserInfo(data)
+      return(data)
+    }
 
     const fetchActivityInfoWithPost = async () => {
       const { data } = await instance.get('me/activities/post')
       setActivityInfo(data)
-      console.log(data)
       return data;
     }
 
-    
-
     useEffect(()=> {
       fetchActivityInfoWithPost()
+      fetchUserInfo()
     }, [])
     
 
@@ -79,7 +80,9 @@ export function Home() {
       
       <Main>
       <Left>
-      <Profile />
+      <Profile
+      userInfo={userInfo}
+       />
       </Left>
       <Right>
       <StatusList

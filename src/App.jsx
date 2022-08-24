@@ -6,6 +6,7 @@ import "./App.css";
 import { Home } from "./Pages/Home";
 import AddActivity from "./Pages/AddActivity";
 import { Login } from "./Pages/Login";
+import Register from "./Pages/Register";
 
 import Box from "@mui/material/Box";
 import Tabs from "@mui/material/Tabs";
@@ -27,6 +28,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/activities" element={<AddActivity />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register/>} />
+          
         </Routes>
       </BrowserRouter>
     </div>

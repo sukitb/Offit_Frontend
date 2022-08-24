@@ -13,9 +13,8 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import EditProfile from "../EditProfileForm/EditProfile";
 import EditProfileForm from "../EditProfileForm/EditProfileForm"
-
-import Avatar from "../../assets/avatar/avatar-1.svg"
 import { avatarGroupClasses } from "@mui/material";
+import { avatar } from '../../components/Utils/avatar'
 
 
 export function Profile(props) {
@@ -93,15 +92,6 @@ export function Profile(props) {
     background-color: black;
   `;
 
-const userInfo = {
-  firstName: "User",
-  lastName: "User",
-  profileImg: "",
-  weight: 45,
-  height: 160
-}
-
-const [user, setUser] = useState(userInfo) 
 const { register, handleSubmit, formState: { errors } } = useForm();
 const onSubmit = data => console.log(data);
 console.log(errors);
@@ -114,14 +104,14 @@ const bmiCal = (height, weight) => {
   return (
     <Profile>
       <ProfileImgContainer>
-        <ProfileImg src={Avatar} />
+        <ProfileImg src={avatar[props.userInfo.avatar]} />
       </ProfileImgContainer>
 
       <ProfileContentContainer>
         <NameCard>
           
           <FullName>
-            {user.firstName} {user.lastName}
+            {props.userInfo.name} {props.userInfo.lastname}
           </FullName>
           <UserName></UserName>
           <br />
@@ -130,13 +120,13 @@ const bmiCal = (height, weight) => {
           
         
           {/* <EditProfile /> */}
-          <EditProfileForm />
+          {/* <EditProfileForm /> */}
 
-        <StatCard>
+        {/* <StatCard>
           <Detail>Streak</Detail>
           <Detail>Total Days Exercises</Detail>
           <Detail>BMI {bmiCal(user.height, user.weight)}</Detail>
-        </StatCard>
+        </StatCard> */}
       </ProfileContentContainer>
     </Profile>
   );

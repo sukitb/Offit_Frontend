@@ -31,15 +31,15 @@ function StatusCard(props) {
             </div>
           </div>
 
-          {props.post.map(({ postContent, createPostAt }) => (
-            <>
+          {props.post.map(({ _id, postContent, createPostAt }) => (
+            <div key={_id}>
               <div className="content">
-                <span className="text">{postContent}</span>
+                <p className="text">{postContent}</p>
               </div>
               <div className="content">
-                <span className="date">{createPostAt}</span>
+                <p className="date">{createPostAt}</p>
               </div>
-            </>
+            </div>
           ))}
         </div>
       </div>

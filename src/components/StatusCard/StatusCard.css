@@ -4,7 +4,7 @@
 }
 
 .status-card {
-   margin: 10px;
+   margin: 5px;
 }
 
 .img-container {
@@ -15,7 +15,7 @@
 
 .img-container img {
     max-width: 250px;
-    margin: 20px 0px;
+    margin: 10px 0px;
 }
 
 .card {
@@ -48,25 +48,24 @@
 }
 
 .card .card-body div {
-    display: flex;
-    align-items: center;
+    display: block;
 }
 
 .card .card-body .title div  {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 10px auto;
+    margin: 5px auto;
 }
 
 .card .card-body .content  {
-    margin: 10px auto;
+    margin: 5px auto;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.card .card-body span {
+.card .card-body p {
     font-size: 18px;
 }
 

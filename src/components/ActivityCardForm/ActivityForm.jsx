@@ -7,14 +7,18 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import axios from "axios";
 import { instance } from "../../api";
+import { ErrorMessage } from '@hookform/error-message';
+
 
 
 function ActivityForm(props) {
   const {
     register,
     handleSubmit,
-    
-  } = useForm();
+    formState: { errors },
+  } = useForm({
+    criteriaMode: "all"
+  });
 
   const onSubmit = async (data) => {
     console.log(data);
@@ -33,7 +37,6 @@ function ActivityForm(props) {
 
   const formSubmit = () => {
     alert("Activity saved");
-    handleClose();
   };
 
   const FormContainer = styled.div`
@@ -129,6 +132,19 @@ function ActivityForm(props) {
           />
         </FormInput>
 
+        <ErrorMessage
+          errors={errors}
+          name="title"
+          render={({ messages }) => {
+            console.log("messages", messages);
+            return messages
+              ? Object.entries(messages).map(([type, message]) => (
+                  <p key={type}>{message}</p>
+                ))
+              : null;
+          }}
+        />
+
         <FormInput>
           <Accordion>
             <AccordionSummary className="form" aria-controls="panel1a-content">
@@ -147,6 +163,19 @@ function ActivityForm(props) {
           </Accordion>
         </FormInput>
 
+        <ErrorMessage
+        errors={errors}
+        name="image"
+        render={({ messages }) => {
+          console.log("messages", messages);
+          return messages
+            ? Object.entries(messages).map(([type, message]) => (
+                <p key={type}>{message}</p>
+              ))
+            : null;
+        }}
+        />
+
         <FormInput>
           <label className="label" htmlFor="hours">
             ⏱ Hours:
@@ -160,6 +189,19 @@ function ActivityForm(props) {
             {...register("hours", { required: true, max: 23, min: 0 })}
           />
 
+<ErrorMessage
+        errors={errors}
+        name="hours"
+        render={({ messages }) => {
+          console.log("messages", messages);
+          return messages
+            ? Object.entries(messages).map(([type, message]) => (
+                <p key={type}>{message}</p>
+              ))
+            : null;
+        }}
+      />
+
           <label className="label" htmlFor="minutes">
             Minutes:
           </label>
@@ -170,6 +212,18 @@ function ActivityForm(props) {
             placeholder="Minutes"
             {...register("minutes", { required: true, max: 59, min: 0 })}
           />
+          <ErrorMessage
+        errors={errors}
+        name="minutes"
+        render={({ messages }) => {
+          console.log("messages", messages);
+          return messages
+            ? Object.entries(messages).map(([type, message]) => (
+                <p key={type}>{message}</p>
+              ))
+            : null;
+        }}
+      />
         </FormInput>
         <FormInput>
           <label className="label" htmlFor="link">
@@ -184,7 +238,7 @@ function ActivityForm(props) {
           />
         </FormInput>
         <SubmitInput>
-          <input onClick={formSubmit} type="submit" value="CREATE" />
+          <input onClick={onSubmit} type="submit" value="CREATE" />
         </SubmitInput>
       </FormContainer>
     </form>

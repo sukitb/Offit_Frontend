@@ -17,10 +17,6 @@ import { instance } from '../../api.js'
 
 function ActivityCard(props) {
 
-  function handleEdit() {
-    alert("click");
-  }
-
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {

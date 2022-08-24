@@ -45,16 +45,10 @@ export default function AddActivities() {
     return data;
   };
 
-  const fetchUserInfo = async () => {
-    const data = await instance.get('me/profile')
-    setUserInfo(data)
-    console.log(data)
-    return(data)
-  }
+  
 
   useEffect(() => {
     fetchActivities()
-    fetchUserInfo()
   }, [])
 
   return (
