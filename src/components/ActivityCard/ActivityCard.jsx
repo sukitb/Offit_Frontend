@@ -37,12 +37,12 @@ function ActivityCard(props) {
     handleClose();
   }
 
-  function handleClickOpenThenCloseDelete() {
-    //open form
-    setOpenDelete(true);
-    //close menu
-    handleClose();
-  }
+  // function handleClickOpenThenCloseDelete() {
+  //   //open form
+  //   setOpenDelete(true);
+  //   //close menu
+  //   handleClose();
+  // }
 
   //forclose form
   const handleClickClose = () => {
@@ -52,7 +52,7 @@ function ActivityCard(props) {
   const handleClickCloseDelete = async () => {
     await instance.delete(`me/activities/${props.id}/delete`);
     props.fetchActivities()
-    setOpenDelete(false)
+    handleClose();
   }
 
   // const handleDelete = async () => {
