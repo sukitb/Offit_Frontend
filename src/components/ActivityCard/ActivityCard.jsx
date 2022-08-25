@@ -108,7 +108,7 @@ function ActivityCard(props) {
           }}
         >
           <MenuItem onClick={handleClickOpenThenCloseForm}>Edit</MenuItem>
-          <MenuItem onClick={handleClickOpenThenCloseDelete}>Delete</MenuItem>
+          <MenuItem onClick={handleClickCloseDelete}>Delete</MenuItem>
         </Menu>
         <Dialog open={openEdit} onClose={handleClickClose}>
           <EditActivityForm
@@ -120,8 +120,8 @@ function ActivityCard(props) {
             fetchActivities={props.fetchActivities}
           />
         </Dialog>
-        <Dialog open={openDelete} onClose={handleClickCloseDelete}>
-        </Dialog>
+        {/* <Dialog open={openDelete} onClose={handleClickCloseDelete}>
+        </Dialog> */}
       </Grid>
 
       
