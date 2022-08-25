@@ -9,6 +9,7 @@ export default function NavTabs() {
 
   const logOut = async (data) => {
     await instance.post("/logout", data);
+
   }
 
   const NavTab = styled.div`
@@ -29,8 +30,8 @@ export default function NavTabs() {
     <NavTab>
         <a href="/">🥇 overview</a>
         <a href="/activities">🏃🏼‍♀️ activity</a>
-        <a onClick={logOut}><button>🚪 logout</button></a> 
-        </NavTab>
+        <a ><button onClick={logOut}>🚪 logout</button></a> 
+    </NavTab>
              
         </div>
   );

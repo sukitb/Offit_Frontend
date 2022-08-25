@@ -150,7 +150,7 @@ function EditActivityForm(props) {
           />
           <ErrorMessage
         errors={errors}
-        name="minutes"
+        name="title"
         render={({ messages }) => {
           console.log("messages", messages);
           return messages
@@ -184,7 +184,7 @@ function EditActivityForm(props) {
         </div>
         <ErrorMessage
         errors={errors}
-        name="minutes"
+        name="image"
         render={({ messages }) => {
           console.log("messages", messages);
           return messages
