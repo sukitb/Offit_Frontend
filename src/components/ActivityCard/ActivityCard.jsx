@@ -120,8 +120,7 @@ function ActivityCard(props) {
           />
         </Dialog>
         <Dialog open={openDelete} onClose={handleClickCloseDelete}>
-          <NavigateButton onClick={handleDelete} text={"Delete"}/>
-          
+          <NavigateButton onClick={handleDelete} text="Delete"/>
         </Dialog>
       </Grid>
 
