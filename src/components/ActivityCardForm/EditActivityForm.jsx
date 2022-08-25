@@ -7,6 +7,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import axios from "axios";
 import { instance } from "../../api";
+import { ErrorMessage } from '@hookform/error-message';
 
 function EditActivityForm(props) {
   const {
