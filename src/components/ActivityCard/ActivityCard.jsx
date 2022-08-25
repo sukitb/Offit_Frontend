@@ -49,14 +49,15 @@ function ActivityCard(props) {
     setOpenEdit(false);
   };
 
-  const handleClickCloseDelete = () => {
+  const handleClickCloseDelete = async () => {
+    await instance.delete(`me/activities/${props.id}/delete`);
+    props.fetchActivities()
     setOpenDelete(false)
   }
 
-  const handleDelete = async () => {
-    await instance.delete(`me/activities/${props.id}/delete`);
-    props.fetchActivities()
-  };
+  // const handleDelete = async () => {
+    
+  // };
 
   //change url to youtube video id
   function youtubeParser(url) {
@@ -120,7 +121,6 @@ function ActivityCard(props) {
           />
         </Dialog>
         <Dialog open={openDelete} onClose={handleClickCloseDelete}>
-          <NavigateButton onClick={handleDelete} text="Delete"/>
         </Dialog>
       </Grid>
 
